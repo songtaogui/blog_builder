@@ -400,22 +400,103 @@ end
 # generate achievement cards, using bib and pdf files in research/bib and research/pdf dir
 # NOTE: the bibfile and pdffile should have same prefix
 function hfun_achieve_cards()
+    me = "Gui Songtao"
     bibfile = joinpath(Franklin.FOLDER_PATH[], "achievements", "achievements.bib")
     bib = BibParser.parse_file(bibfile, :BibTeX; check=:warn)
     # sort_bibliography!(bib, :nyt)
     div_achieve = """
     <div class="grid-x grid-margin-x content  content-even">
     """
-
+    valid_type = [ "article", "inproceedings", "conference", "book", "incollection", "phdthesis", "mastersthesis", "unpublished" ]
     for id in reverse(bib.keys)
         curb=bib[id] # current bib
+        curb_type = curb.type
+        # curb_type ∈ valid_type || continue
         curb_pdf = "achievements/pdf/" * id * ".pdf"
-        curb_pdfp = "pdf/" * id * ".pdf"
+        curb_pdfp = "/achievements/pdf/" * id * ".pdf"
         curb_url = curb.access.url
         curb_title = curb.title
         curb_type = curb.type
         curb_keywords = split(curb.fields["keywords"], ",")
-        curb_authors = join([join(uppercasefirst.(filter(!isempty,[t.first, t.junior, t.middle, t.particle, t.last])), " ") for t in curb.authors],", ")
+        curb_authors = join([join(uppercasefirst.(filter(!isempty,[ t.last, t.junior, t.middle, t.particle, t.first])), " ") for t in curb.authors],", ")
+        # change the main author's name to uppercase
+        curb_authors = replace(curb_authors, me => uppercase(me))
+        curb_year = curb.date.year
+        curb_pubinfo = join([curb.in.journal, curb.in.pages, curb.in.volume],", ")
+        # generate html
+        # access: link, download, cite
+        curb_div_access  = ""
+        curb_div_icons   = ""
+        if !isempty(curb_url)
+            curb_div_icons *= """
+            <a href="$curb_url" class="tooltips" title="" target="_blank" data-original-title="External link"> <i class ="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            """
+        end
+        if isfile(curb_pdf)
+            curb_div_icons *= """
+            <a href="$curb_pdfp" class="tooltips" title="" target="_blank" data-original-title="External link"> <i class ="fas fa-download" aria-hidden="true"></i></a>
+            """
+        end
+        curb_div_access = """
+        <div class="achieve-access">
+        $curb_div_icons
+        </div>
+        """
+        
+        curb_div_content_kwd = join([ """<span class="label label-tag">$x</span>""" for x in curb_keywords ])
+
+        curb_div_content = """
+        <h4 class="achieve-title">$curb_title</h4>
+        <div class="achive-content">
+            <span class="label label-type">$curb_type</span>
+            $curb_div_content_kwd
+            <div class="achieve-author">$curb_authors</div>
+            <div class="achieve-pubinfo">$curb_pubinfo</div>
+            <div class="achieve-year">Publication year: $curb_year</div>
+        </div>
+        """
+
+        curb_div_all = """
+        <div class="achieve-card cell small-12">
+            <div class="achieve-main">
+                $curb_div_access
+                $curb_div_content
+            </div>
+        </div>
+        """
+        div_achieve *= curb_div_all
+    end
+    div_achieve *= "</div>"
+    return div_achieve
+end
+
+
+
+
+# generate article only cards, using bib and pdf files in research/bib and research/pdf dir
+# NOTE: the bibfile and pdffile should have same prefix
+function hfun_article_cards()
+    me = "Gui Songtao"
+    bibfile = joinpath(Franklin.FOLDER_PATH[], "achievements", "achievements.bib")
+    bib = BibParser.parse_file(bibfile, :BibTeX; check=:warn)
+    # sort_bibliography!(bib, :nyt)
+    div_achieve = """
+    <div class="grid-x grid-margin-x content  content-even">
+    """
+    valid_type = [ "article", "inproceedings", "conference", "book", "incollection", "phdthesis", "mastersthesis", "unpublished" ]
+    for id in reverse(bib.keys)
+        curb=bib[id] # current bib
+        curb_type = curb.type
+        curb_type ∈ valid_type || continue
+        curb_pdf = "achievements/pdf/" * id * ".pdf"
+        curb_pdfp = "/achievements/pdf/" * id * ".pdf"
+        curb_url = curb.access.url
+        curb_title = curb.title
+        curb_type = curb.type
+        curb_keywords = split(curb.fields["keywords"], ",")
+        curb_authors = join([join(uppercasefirst.(filter(!isempty,[ t.last, t.junior, t.middle, t.particle, t.first])), " ") for t in curb.authors],", ")
+        # change the main author's name to uppercase
+        curb_authors = replace(curb_authors, me => uppercase(me))
         curb_year = curb.date.year
         curb_pubinfo = join([curb.in.journal, curb.in.pages, curb.in.volume],", ")
         # generate html

@@ -754,7 +754,7 @@ screen and (min-width:40em) {
     line-height: 18px;
 }
 .achieve-author {
-    /* font-size: 13px; */
+    font-size: 16px;
     font-variant: small-caps;
     color: rgb(0, 18, 217);
     /* text-align: right; */
@@ -768,7 +768,7 @@ screen and (min-width:40em) {
     -webkit-font-smoothing: inherit;
     /* cursor: pointer; */
     box-sizing: border-box;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 18px;
     font-style: italic;
 }
@@ -782,7 +782,7 @@ screen and (min-width:40em) {
     -webkit-font-smoothing: inherit;
     /* cursor: pointer; */
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 18px;
 }
 
@@ -815,4 +815,21 @@ screen and (min-width:40em) {
 .label-tag {
     /* 2 */
     background-color: #4063D8;
+}
+
+.cv-img {
+    vertical-align: text-bottom;
+    display: inline-block;
+    margin-top: 0rem !important; 
+    margin-bottom: 0rem !important; 
+    width: 20px;
+    height: 20px;
+}
+.cv-contact {
+    /* display: inline-block; */
+    margin-top: 5px;
+    margin-left: 10px;
+    min-width: 150px;
+    max-width: 300px;
+    font-size: 18px;
 }

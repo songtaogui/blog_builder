@@ -4956,7 +4956,11 @@ input[type=button].btn-block {
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
-    padding: 1.25rem
+    /* padding: 1.25rem */
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .card-title {
@@ -8503,7 +8507,7 @@ button.bg-dark:focus {
 
 .pt-2,
 .py-2 {
-    padding-top: .5rem !important
+    padding-top: .0rem !important
 }
 
 .pr-2,
@@ -8936,7 +8940,7 @@ button.bg-dark:focus {
 
     .pt-sm-2,
     .py-sm-2 {
-        padding-top: .5rem !important
+        padding-top: .0rem !important
     }
 
     .pr-sm-2,
@@ -9370,7 +9374,7 @@ button.bg-dark:focus {
 
     .pt-md-2,
     .py-md-2 {
-        padding-top: .5rem !important
+        padding-top: .0rem !important
     }
 
     .pr-md-2,
@@ -9804,7 +9808,7 @@ button.bg-dark:focus {
 
     .pt-lg-2,
     .py-lg-2 {
-        padding-top: .5rem !important
+        padding-top: .0rem !important
     }
 
     .pr-lg-2,
@@ -10238,7 +10242,7 @@ button.bg-dark:focus {
 
     .pt-xl-2,
     .py-xl-2 {
-        padding-top: .5rem !important
+        padding-top: .0rem !important
     }
 
     .pr-xl-2,
@@ -11767,7 +11771,7 @@ a.summary-link {
 }
 
 .card .card-text {
-    padding: .75rem 1rem
+    padding: 0.05rem 1rem
 }
 
 .card .card-text p {
@@ -11957,7 +11961,7 @@ a.summary-link {
 }
 
 .article-container {
-    max-width: 760px;
+    max-width: 1200px;
     padding: 0 20px;
     margin: 0 auto
 }
@@ -12339,7 +12343,7 @@ ul.share li:hover i {
 .home-section {
     position: relative;
     background-color: #fff;
-    padding: 110px 0;
+    /* padding: 110px 0; */
     animation: intro .3s both;
     animation-delay: .15s
 }
@@ -12374,9 +12378,9 @@ ul.share li:hover i {
     background-attachment: fixed
 }
 
-.home-section:first-of-type {
+/* .home-section:first-of-type {
     padding-top: 50px
-}
+} */
 
 .home-section:nth-of-type(even) {
     background-color: #ffffff
@@ -12658,7 +12662,7 @@ ul.ul-edu li .description p.institution {
 .experience .card-text,
 .experience .card-text p {
     color: #000 !important;
-    font-size: .75rem !important
+    font-size: 1rem !important
 }
 
 .dark .experience .text-muted {

@@ -72,6 +72,7 @@ Useful HTML snippets
 \newcommand{\smindent}[1]{\span{width:45px;text-align:right;color:slategray;}{#1}}
 \newcommand{\smnote}[1]{\style{font-size:85%;line-height:0em;}{#1}}
 
+
 <!-- Colorful NoteBoxes: note, info, warn, error, tip, todo, hack -->
 \newcommand{\bnote}[2]{ @@box-note  @@title 📘 #1@@ @@content #2 @@ @@}
 \newcommand{\binfo}[2]{ @@box-info  @@title 🥑 #1@@ @@content #2 @@ @@}

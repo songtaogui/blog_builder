@@ -42,6 +42,8 @@ of Crop Genetic Improvement, Huazhong Agricultural University. My research inter
 I am also co-maintaining the [ZEAMAP](www.zeamap.com) database, which collected multi-omics data in *Zea* populations.
 \end{biography}
 
+Learn more about me from my [CV](/cv/)
+
 \shortcv{
   interests=["Population genetics", "Graph genomics", "Cool codes in julia", "Ping-Pong", "Cat"],
   education=[
@@ -73,7 +75,7 @@ I am also co-maintaining the [ZEAMAP](www.zeamap.com) database, which collected 
 
 \end{section}
 
-~~~<hr>~~~
+---
 
 <!-- ------------------
      EXPERIENCE SECTION
