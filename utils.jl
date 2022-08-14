@@ -407,24 +407,7 @@ function hfun_achieve_cards()
     <div class="grid-x grid-margin-x content  content-even">
     """
 
-    # [book, article, report, thesis] => "article"
-    # [sorftware, dataset] => "sorftware"
-    # [misc, allrests...] => "random"
-    # typemap = Dict{String, String}()
-    # for id in bib.keys
-    #     type = bib[id].type
-    #     if type ∈ ["book", "article", "report", "thesis"]
-    #         push!(typemap, id => "article")
-    #     elseif type ∈ ["software", "dataset"]
-    #         push!(typemap, id => "sorftware")
-    #     else
-    #         push!(typemap, id => "random")
-    #     end
-    # end
-
     for id in reverse(bib.keys)
-        # type = typemap[id]
-        # curb_txt = export_biblex(curb)
         curb=bib[id] # current bib
         curb_pdf = "achievements/pdf/" * id * ".pdf"
         curb_pdfp = "pdf/" * id * ".pdf"

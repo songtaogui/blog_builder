@@ -195,6 +195,8 @@ samp {
 pre {
     margin-top: 0;
     margin-bottom: 1rem;
+    max-width: 1200px;
+    max-height: 1200px;
     overflow: auto
 }
 
