@@ -12550,8 +12550,9 @@ a.hero-cta-alt:hover {
 
 #profile {
     text-align: center;
-    padding: 30px 10px;
-    position: relative
+    padding: 50px 10px;
+    position: relative;
+    border:#007bff;
 }
 
 .avatar {

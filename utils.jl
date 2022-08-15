@@ -30,12 +30,14 @@ end
 # ---------------------------------------- #
 
 # Portrait block with a few optional fields: name, job title, social buttons
-@lx function portrait(; name="", job="", link="", linkname="",
-                     twitter="", gscholar="", github="", linkedin="")
+@lx function portrait(; name="",motto="",location="", job="", link="", linkname="",
+                     twitter="", gscholar="", github="", linkedin="", orcid="",blog="")
     io = IOBuffer()
     write(io, html("<div class=portrait-title>"))
     isempty(name) || write(io, html("<h2>$name</h2>"))
     isempty(job) || write(io, html("<h3>$job</h3>"))
+    isempty(motto) || write(io, html("<span style=\"color:#9558B2\">$motto</span>"))
+    
     if !isempty(link)
         if isempty(linkname)
             write(io, html("""<h3><a href="$link" target=_blank rel=noopener><span>$link</span></a></h3>"""))
@@ -43,14 +45,17 @@ end
             write(io, html("""<h3><a href="$link" target=_blank rel=noopener><span>$linkname</span></a></h3>"""))
         end
     end
-    if !all(isempty, (twitter, gscholar, github, linkedin))
-        write(io, html("<ul class=network-icon aria-hidden=true>"))
-        isempty(twitter) || write(io, html("""<li><a href="$twitter" target=_blank rel=noopener><i class="fab fa-twitter big-icon"></i></a></li>"""))
-        isempty(gscholar) || write(io, html("""<li><a href="$gscholar" target=_blank rel=noopener><i class="fas fa-graduation-cap big-icon"></i></a></li>"""))
-        isempty(github) || write(io, html("""<li><a href="$github" target=_blank rel=noopener><i class="fab fa-github big-icon"></i></a></li>"""))
-        isempty(linkedin) || write(io, html("""<li><a href="$linkedin" target=_blank rel=noopener><i class="fab fa-linkedin big-icon"></i></a></li>"""))
+    if !all(isempty, (twitter, gscholar, github, linkedin,orcid))
+        write(io, html("<br><br><ul class=network-icon aria-hidden=true>"))
+        isempty(gscholar) || write(io, html("""<li><a href="$gscholar" target=_blank rel=noopener><img class="mpg-icon" src="/assets/img/googlescholar.svg"></a></li>"""))
+        isempty(github) || write(io, html("""<li><a href="$github" target=_blank rel=noopener><img class="mpg-icon" src="/assets/img/github.svg"></a></li>"""))
+        isempty(blog) || write(io, html("""<li><a href="$blog" target=_blank rel=noopener><img class="mpg-icon" src="/assets/img/homepage.svg"></a></li>"""))
+        isempty(orcid) || write(io, html("""<li><a href="$orcid" target=_blank rel=noopener><img class="mpg-icon" src="/assets/img/orcid.svg"></a></li>"""))
+        isempty(linkedin) || write(io, html("""<li><a href="$linkedin" target=_blank rel=noopener><img class="mpg-icon" src="/assets/img/linkedin.svg"></a></li>"""))
+        isempty(twitter) || write(io, html("""<li><a href="$twitter" target=_blank rel=noopener><img class="mpg-icon" src="/assets/img/twitter.svg"></a></li>"""))
         write(io, html("</ul>"))
     end
+    isempty(location) || write(io, html("<br><br><span class=\"cv-contact\"> <img class=\"cv-img\" src=\"/assets/img/location-indicator.svg\"> <a style=\"color:#878787\">$location</a></span>"))
     write(io, html("</div>"))
     return String(take!(io))
 end
@@ -60,7 +65,7 @@ end
     io = IOBuffer()
     write(io, html("""<h1>Biography</h1>""") * md)
     isempty(resume) || write(io, html("""
-        </br><p><i class="fas fa-download pr-1 fa-fw"></i>Download my <a href="$resume" target=_blank>resume</a>.</p>"""))
+        </br><p><i class="fa fa-chevron-circle-right"> </i> Learn more about me from <a href="$resume" target=_blank>my resume</a>.</p>"""))
     return String(take!(io))
 end
 

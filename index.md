@@ -20,20 +20,22 @@ hascomment = false
 \img{"/assets/img/person.jpg", class="avatar avatar-circle", alt="Songtao Gui"}
 \portrait{
   name="Songtao Gui",
-  job="Postdoc in HZAU",
-  link="http://www.maizego.org/",
-  linkname="MaizeGO",
+  job="Researcher & Developer",
+  motto="Being different at all cost.",
+  location="Wuhan, China, 430070",
   github="https://github.com/songtaogui",
   gscholar="https://scholar.google.co.uk/citations?user=1LAvdloAAAAJ",
-  twitter="https://twitter.com/GuiSongtao"
+  twitter="https://twitter.com/GuiSongtao",
+  blog="https://songtaogui.github.io/",
+  orcid="http://orcid.org/0000-0001-6718-982X"
 }
 @@ <!-- end of column -->
 
 <!-- RIGHT COLUMN -->
 @@col-12,col-lg-8
 
-<!-- \begin{biography}{resume="/assets/demo_resume.pdf"} -->
-\begin{biography}{resume=""}
+\begin{biography}{resume="/cv"}
+<!-- \begin{biography}{resume=""} -->
   Hi there, I am a postdoc of crop genetics and breeding at the National Key Laboratory
 of Crop Genetic Improvement, Huazhong Agricultural University. My research interests includes:
 - Population genomics and genetics
@@ -41,8 +43,6 @@ of Crop Genetic Improvement, Huazhong Agricultural University. My research inter
 - Multi-omics integration
 I am also co-maintaining the [ZEAMAP](www.zeamap.com) database, which collected multi-omics data in *Zea* populations.
 \end{biography}
-
-Learn more about me from my [CV](/cv/)
 
 \shortcv{
   interests=["Population genetics", "Graph genomics", "Cool codes in julia", "Ping-Pong", "Cat"],

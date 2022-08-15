@@ -9,7 +9,7 @@ pubdate = Date("2022-08-14")
 ---
 
 ~~~
-<a> <img src="https://raw.githubusercontent.com/songtaogui/imgbed/master/gst%E8%AF%81%E4%BB%B6%E7%85%A7-%E7%99%BD%E5%BA%95-%E6%96%B9.jpg" style="zoom:50%;" align="right" width=20% /> </a>
+<a> <img src="https://raw.githubusercontent.com/songtaogui/imgbed/master/gst%E8%AF%81%E4%BB%B6%E7%85%A7-%E7%99%BD%E5%BA%95-%E6%96%B9.jpg" style="zoom:60%;" align="right" width=22% /> </a>
 ~~~
 
 # **Songtao Gui**, Ph.D.
@@ -22,17 +22,17 @@ pubdate = Date("2022-08-14")
 <!-- Contact -->
 ~~~
 <div class="cv-contacts">
-<span class="cv-contact"> <img class="cv-img" src="data/email.svg"> <a>songtaogui@sina.com</a></span>
-<span class="cv-contact"> <img class="cv-img" src="data/WeChat.svg"> <a>gst0104</a></span>
-<span class="cv-contact"> <img class="cv-img" src="data/qq.svg"> <a>420373005</a></span>
-<span class="cv-contact"> <img class="cv-img" src="data/phone.svg"> +86-<a>15002717735</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/email.svg"> <a>songtaogui@sina.com</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/WeChat.svg"> <a>gst0104</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/qq.svg"> <a>420373005</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/phone.svg"> +86-<a>15002717735</a></span>
 
 <br>
 
-<span class="cv-contact"> <img class="cv-img" src="data/homepage.svg"> <a href="https://songtaogui.github.io">songtaogui.github.io</a></span>
-<span class="cv-contact"> <img class="cv-img" src="data/github.svg"> <a href="https://github.com/songtaogui">songtaogui</a></span>
-<span class="cv-contact"> <img class="cv-img" src="data/twitter.svg"> <a href="https://twitter.com/GuiSongtao">GuiSongtao</a></span>
-<span class="cv-contact"> <img class="cv-img" src="data/orcid.svg"> <a href="http://orcid.org/0000-0001-6718-982X">0000-0001-6718-982X</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/homepage.svg"> <a href="https://songtaogui.github.io">songtaogui.github.io</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/github.svg"> <a href="https://github.com/songtaogui">songtaogui</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/twitter.svg"> <a href="https://twitter.com/GuiSongtao">GuiSongtao</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/orcid.svg"> <a href="http://orcid.org/0000-0001-6718-982X">0000-0001-6718-982X</a></span>
 </div>
 ~~~
 
@@ -44,7 +44,7 @@ pubdate = Date("2022-08-14")
 - \cwarn{**Programming Languages**}: \cnote{Bash}; \cnote{Perl}; \cnote{R}; \cnote{Julia}; \cnote{Python}(Read&Edit); \cnote{Rust}(Trying);
 - \cwarn{**Systems**}: \cnote{Linux}(Debian, Ubuntu, Red Hat); \cnote{Windows}; \cnote{HPC cluster}(CentOS7-based)
 - \cwarn{**Bioinformatics**}:
-  - \cnote{Stat-of-art NGS/omics-seq analyses}: DNA/RNA-seq(Illumina, PB-SMRT/RSII, ONT), ChIP/HiC/WGS/ATAC *etc.*
+  - \cnote{State-of-art NGS/omics-seq analyses}: DNA/RNA-seq(Illumina, PB-SMRT/RSII, ONT), ChIP/HiC/WGS/ATAC *etc.*
   - \cnote{Downstream analyses}: Population Genetics, Phylogenetics, Genomics, Epigenetics *etc.*
   - \cnote{Visualisation}: R/ggplot-x, Julia/Makie, AdobeIllustrator, Photoshop *etc.*
   - \cnote{DIY pipelines when necessary}: Pan-genomic, SV calling, GWAS and post-GWAS *etc.*
