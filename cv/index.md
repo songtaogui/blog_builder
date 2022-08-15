@@ -29,8 +29,8 @@ pubdate = Date("2022-08-14")
 
 <br>
 
-<span class="cv-contact"> <img class="cv-img" src="data/homepage.svg"> <a href="songtaogui.github.io">songtaogui.github.io</a></span>
-<span class="cv-contact"> <img class="cv-img" src="data/github.svg"> <a href="github.com/songtaogui">songtaogui</a></span>
+<span class="cv-contact"> <img class="cv-img" src="data/homepage.svg"> <a href="https://songtaogui.github.io">songtaogui.github.io</a></span>
+<span class="cv-contact"> <img class="cv-img" src="data/github.svg"> <a href="https://github.com/songtaogui">songtaogui</a></span>
 <span class="cv-contact"> <img class="cv-img" src="data/twitter.svg"> <a href="https://twitter.com/GuiSongtao">GuiSongtao</a></span>
 <span class="cv-contact"> <img class="cv-img" src="data/orcid.svg"> <a href="http://orcid.org/0000-0001-6718-982X">0000-0001-6718-982X</a></span>
 </div>
@@ -67,7 +67,7 @@ pubdate = Date("2022-08-14")
     Responsibilities include:
     * Study the pan-genomics of *Zea*
     * Study the genomics and genetic variations in *Zea*
-    * Construct and maintain the *Zea* multi-omics database [Zeamap](www.zeamap.com)
+    * Construct and maintain the *Zea* multi-omics database [Zeamap](https://www.zeamap.com)
     """,
   from="Jan 2018",
   to="Present",
@@ -78,7 +78,7 @@ pubdate = Date("2022-08-14")
   title="Developer(concurrent post)",
   company="BGI Genomics",
   descr="""
-  Cooperate with/Lead a group of 5 members to develop the [Zeamap](www.zeamap.com) database.
+  Cooperate with/Lead a group of 5 members to develop the [Zeamap](https://www.zeamap.com) database.
   """,
   from="Dec 2018",
   to="Dec 2019",
