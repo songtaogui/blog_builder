@@ -94,7 +94,7 @@ I am also co-maintaining the [ZEAMAP](www.zeamap.com) database, which collected 
     Responsibilities include:
     * Study the genomics and genetic variations in *Zea*
     * Study the pan-genomics of *Zea*
-    * Construct and maintain the *Zea* multi-omics database [Zeamap](www.zeamap.com)
+    * Construct and maintain the *Zea* multi-omics database [Zeamap](http://www.zeamap.com)
     """,
   from="Jan 2018",
   to="Present",
