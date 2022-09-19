@@ -60,6 +60,7 @@ section {
     display: block
 }
 
+/* 
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
@@ -70,6 +71,7 @@ body {
     text-align: left;
     background-color: #fff
 }
+*/
 
 [tabindex="-1"]:focus:not(:focus-visible) {
     outline: 0 !important
@@ -183,7 +185,7 @@ a:not([href]):hover {
     color: inherit;
     text-decoration: none
 }
-
+/*
 pre,
 code,
 kbd,
@@ -195,11 +197,13 @@ samp {
 pre {
     margin-top: 0;
     margin-bottom: 1rem;
-    max-width: 1200px;
+    margin-left: auto;
+    max-width: 900px;
+    width: 95%;
     max-height: 1200px;
     overflow: auto
 }
-
+*/
 figure {
     margin: 0 0 1rem
 }
@@ -308,14 +312,13 @@ textarea {
     overflow: auto;
     resize: vertical
 }
-
+/* 
 fieldset {
     min-width: 0;
     padding: 0;
     margin: 0;
     border: 0
 }
-
 legend {
     display: block;
     width: 100%;
@@ -327,6 +330,7 @@ legend {
     color: inherit;
     white-space: normal
 }
+*/
 
 progress {
     vertical-align: baseline
@@ -538,7 +542,7 @@ code {
 a>code {
     color: inherit
 }
-
+/* 
 kbd {
     padding: .2rem .4rem;
     font-size: 87.5%;
@@ -563,7 +567,7 @@ pre code {
     font-size: inherit;
     color: inherit;
     word-break: normal
-}
+} */
 
 .pre-scrollable {
     max-height: 340px;
@@ -2665,12 +2669,12 @@ textarea.form-control.is-invalid {
 .btn:disabled {
     opacity: .65
 }
-
+/* 
 a.btn.disabled,
 fieldset:disabled a.btn {
     pointer-events: none
 }
-
+ */
 .btn-primary {
     color: #fff;
     background-color: #2199df;
@@ -4476,6 +4480,9 @@ input[type=button].btn-block {
     text-align: center
 }
 
+.nav-rss {
+    padding: 0%;
+}
 .tab-content>.tab-pane {
     display: none
 }
@@ -5545,7 +5552,7 @@ a.badge-dark.focus {
 .alert-success .alert-link {
     color: #0b2e13
 }
-/* 
+
 .alert-info {
     color: #0c5460;
     background-color: #d1ecf1;
@@ -5614,7 +5621,7 @@ a.badge-dark.focus {
 
 .alert-dark .alert-link {
     color: #040505
-} */
+}
 
 @keyframes progress-bar-stripes {
     from {
@@ -10835,7 +10842,7 @@ html {
         font-size: 21px
     }
 }
-
+/* 
 body {
     font-family: inherit;
     font-size: 1rem;
@@ -10845,16 +10852,18 @@ body {
     margin-top: 70px;
     padding-top: 0;
     counter-reset: captions
+} 
+
+body.no-navbar {
+    margin-top: 0 !important
 }
+
+*/
 
 @media(max-width:991.98px) {
     body {
         margin-top: 50px
     }
-}
-
-body.no-navbar {
-    margin-top: 0 !important
 }
 
 .max-width-640 {
@@ -11009,13 +11018,13 @@ figcaption.numbered {
     counter-increment: captions
 }
 
+/* 
 pre,
 code {
     font-family: roboto mono, monospace;
     color: #c7254e;
     background-color: #f8f8f8
 }
-
 pre {
     margin: 0 0 1rem;
     border-color: #f8f8f8;
@@ -11026,7 +11035,7 @@ pre {
 pre code {
     white-space: pre;
     overflow-x: auto
-}
+} */
 
 hr {
     border: 0;
@@ -11432,8 +11441,8 @@ div.alert a {
     border-bottom: solid 1px currentColor
 }
 
-.article-style aside,
-/* .alert-note {
+/* .article-style aside,
+.alert-note {
     color: #12537e;
     background-color: #f6fbfe;
     border-color: #209cee
@@ -12093,6 +12102,9 @@ article .article-metadata {
 .article-style {
     overflow-x: hidden;
     overflow-wrap: break-word;
+    max-width: 1000px;
+    /* position: absolute; */
+    /* margin: auto; */
     word-wrap: break-word;
     -ms-word-break: break-all;
     word-break: break-all;
@@ -12107,8 +12119,8 @@ article .article-metadata {
 .article-style video {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    /* margin-top: 2rem; */
+    /* margin-bottom: 2rem; */
     padding: 0
 }
 

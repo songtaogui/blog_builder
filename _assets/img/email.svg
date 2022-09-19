@@ -1,2 +1,13 @@
-<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1660478174208" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2556" width="64" height="64" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">@font-face { font-family: feedback-iconfont; src: url("//at.alicdn.com/t/font_1031158_u69w8yhxdu.woff2?t=1630033759944") format("woff2"), url("//at.alicdn.com/t/font_1031158_u69w8yhxdu.woff?t=1630033759944") format("woff"), url("//at.alicdn.com/t/font_1031158_u69w8yhxdu.ttf?t=1630033759944") format("truetype"); }
-</style></defs><path d="M874.666667 375.189333V746.666667a64 64 0 0 1-64 64H213.333333a64 64 0 0 1-64-64V375.189333l64 54.250667V746.666667h597.333334V429.44l64-54.250667zM810.666667 213.333333a64.789333 64.789333 0 0 1 22.826666 4.181334 63.616 63.616 0 0 1 26.794667 19.413333 64.32 64.32 0 0 1 9.344 15.466667c2.773333 6.570667 4.48 13.696 4.906667 21.184L874.666667 277.333333v21.333334L553.536 572.586667a64 64 0 0 1-79.893333 2.538666l-3.178667-2.56L149.333333 298.666667v-21.333334a63.786667 63.786667 0 0 1 35.136-57.130666A63.872 63.872 0 0 1 213.333333 213.333333h597.333334z m-9.6 64h-578.133334L512 523.882667 801.066667 277.333333z" p-id="2557" fill="#2c2c2c"></path></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<circle cx="32" cy="32" r="31.242"/>
+<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.5" stroke-miterlimit="10" d="M49.54,25.585v17.417
+	c0,1.659-1.344,3.001-3,3.001H18.533c-1.657,0-3-1.342-3-3.001V25.585l3,2.543v14.872H46.54V28.129L49.54,25.585z M46.54,17.997
+	c0.366,0,0.728,0.067,1.07,0.197c0.492,0.187,0.926,0.501,1.257,0.91c0.18,0.22,0.326,0.464,0.438,0.725
+	c0.129,0.308,0.21,0.642,0.229,0.993l0.006,0.176v1L34.483,34.842c-1.067,0.909-2.623,0.96-3.746,0.118l-0.148-0.12L15.532,21.999
+	v-1c-0.003-1.132,0.635-2.169,1.647-2.679c0.42-0.212,0.884-0.322,1.354-0.322H46.54z M46.089,20.998H18.983l13.552,11.559
+	L46.089,20.998z"/>
+</svg>

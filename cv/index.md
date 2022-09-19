@@ -1,38 +1,49 @@
 +++
 title = ""
+tags=["cv"]
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 hascomment = false
+hideaplayer = true
 pubdate = Date("2022-08-14")
 +++
+
+> [查看中文简历](/cv/Zh)
 
 ---
 
 ~~~
-<a> <img src="https://raw.githubusercontent.com/songtaogui/imgbed/master/gst%E8%AF%81%E4%BB%B6%E7%85%A7-%E7%99%BD%E5%BA%95-%E6%96%B9.jpg" style="zoom:60%;" align="right" width=22% /> </a>
+<a> <img id="photo" src="/assets/personal/gstphoto.jpg" align="right" /> </a>
 ~~~
 
-# **Songtao Gui**, Ph.D.
 
+# **Songtao Gui**, Ph.D.
 
 - Researcher in \cwarn{population} genetics, \cwarn{pan-genomics} and \cwarn{graph} genome;
 - Trying to solve the \cwarn{$ V_{Geno} \sim V_{Pheno} $} problem using \cwarn{multi-omics} evidences;
 - Developing tools and \cwarn{databases} related to omics-analyses;
 
+#### Contacts
+
 <!-- Contact -->
 ~~~
 <div class="cv-contacts">
-<span class="cv-contact"> <img class="cv-img" src="/assets/img/email.svg"> <a>songtaogui@sina.com</a></span>
+
+<!--
 <span class="cv-contact"> <img class="cv-img" src="/assets/img/WeChat.svg"> <a>gst0104</a></span>
 <span class="cv-contact"> <img class="cv-img" src="/assets/img/qq.svg"> <a>420373005</a></span>
 <span class="cv-contact"> <img class="cv-img" src="/assets/img/phone.svg"> +86-<a>15002717735</a></span>
 
 <br>
+-->
 
-<span class="cv-contact"> <img class="cv-img" src="/assets/img/homepage.svg"> <a href="https://songtaogui.github.io">songtaogui.github.io</a></span>
-<span class="cv-contact"> <img class="cv-img" src="/assets/img/github.svg"> <a href="https://github.com/songtaogui">songtaogui</a></span>
-<span class="cv-contact"> <img class="cv-img" src="/assets/img/twitter.svg"> <a href="https://twitter.com/GuiSongtao">GuiSongtao</a></span>
-<span class="cv-contact"> <img class="cv-img" src="/assets/img/orcid.svg"> <a href="http://orcid.org/0000-0001-6718-982X">0000-0001-6718-982X</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/email.svg"> <a href="mailto: songtaogui@sina.com">songtaogui@sina.com</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/homepage.svg"> <a href="https://songtaogui.github.io">Blog</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/github.svg"> <a href="https://github.com/songtaogui">GitHub</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/twitter.svg"> <a href="https://twitter.com/GuiSongtao">Twitter</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/orcid.svg"> <a href="http://orcid.org/0000-0001-6718-982X">ORCID</a></span>
+<span class="cv-contact"> <img class="cv-img" src="/assets/img/googlescholar.svg"> <a href="https://scholar.google.co.uk/citations?user=1LAvdloAAAAJ">GoogleScholar</a></li>
 </div>
 ~~~
 
@@ -62,7 +73,7 @@ pubdate = Date("2022-08-14")
 
 \experience{
   title="PostDoc",
-  company="""Huanzhong Agricultural University; Supervisor: Prof. Jianbing Yan""",
+  company="""Huazhong Agricultural University; Supervisor: Prof. Jianbing Yan""",
   descr="""
     Responsibilities include:
     * Study the pan-genomics of *Zea*
@@ -141,3 +152,5 @@ pubdate = Date("2022-08-14")
 
 
 ~~~<hr>~~~
+
+{{page_tags}}

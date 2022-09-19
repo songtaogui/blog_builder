@@ -1,0 +1,44 @@
+<div class="Aplayer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <meting-js id="7627064833" 
+               server="netease"
+               type="playlist"
+               fixed="false"
+               autoplay="true"
+               listMaxHeight="1000px"
+               mutex="true"
+               listfolded="true"
+               order="random"
+               theme="#8C6BB1">
+    </meting-js>
+    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+    <script>
+        function removelrc(){
+            //document.querySelector('meting-js').aplayer.lrc.hide();
+            $(".aplayer.aplayer-fixed .aplayer-icon-lrc").addClass("aplayer-icon-lrc-inactivity");
+            $(".aplayer.aplayer-fixed .aplayer-lrc").addClass("aplayer-lrc-hide");
+            document.querySelector('meting-js').aplayer.on('play', function () {
+                    document.querySelector('meting-js').aplayer.lrc.show();
+            });
+            document.querySelector('meting-js').aplayer.on('pause', function () {
+                    document.querySelector('meting-js').aplayer.lrc.hide();
+            });
+        }
+        document.querySelector('meting-js').addEventListener("DOMNodeInserted",removelrc);
+        setTimeout(function() {
+            document.querySelector('meting-js').removeEventListener("DOMNodeInserted",removelrc);
+        }, 5000);
+    </script>
+</div>
+
+<!-- 
+梶浦由记
+流派未月亭
+矶村由纪子
+吉森信
+岸部真明
+川井宪次
+深泽秀行
+市川淳
+ -->

@@ -6,23 +6,26 @@
   <meta name="author" content="{{author}}">
   <meta name="description" content="{{jobtitle}}">
   <meta name="theme-color" content="#2962ff">
-
+  <meta name="google-site-verification" content="sKCEBeALSs13uui0cWMviq9hlm0rPByKQKNHnOdq-d0" />
+  
   <link rel="icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
   {{insert stylesheets.html}}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" 
+  integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin=anonymous async></script>
   {{isdef title}} <title>{{title}}</title>  {{end}}
+
 
 </head>
 
 
 <body id=top data-spy="scroll" data-offset="70" data-target=#navbar-main>
 
-  {{insert navbar.html}}
-  <span class="js-widget-page d-none"></span>
+  {{isnotdef hidenavbar}} {{insert navbar.html}} {{end}}
 
+  <span class="js-widget-page d-none"></span>
+  
   {{isnotpage index.html}}
     <article class=article>
       <div class="article-container pt-3">
@@ -36,5 +39,8 @@
         </div>
       {{end}}
       <div class="article-container">
-        <div class="article-style">
+        <!-- 关闭article-style, 不然跟nutshell不兼容 -->
+        <!-- <div class="gst-style"> -->
+        <div class="layout-main">
+        <!-- <div class="article-style"> -->
   {{end}}

@@ -15,18 +15,23 @@
     <!-- Menu items -->
     <div class="navbar-collapse main-menu-item collapse justify-content-start" id=navbar-content>
       <ul class="navbar-nav d-md-inline-flex">
-        <!-- <li class=nav-item><a class=nav-link href="/#posts" data-target=#posts><span>Recent posts</span></a></li> -->
         <li class=nav-item><a class=nav-link href="/posts/"><span>Posts</span></a></li>
+        <!-- <li class=nav-item><a class=nav-link href="/notebooks/"><span>Notebooks</span></a></li> -->
         <li class=nav-item><a class=nav-link href="/courses/"><span>Courses</span></a></li>
         <li class=nav-item><a class=nav-link href="/achievements/"><span>Achievements</span></a></li>
-        <!-- <li class=nav-item><a class=nav-link href="/researches/"><span>Researches</span></a></li> -->
         <li class=nav-item><a class=nav-link href="/cv/"><span>CurriculumVitae</span></a></li>
         <li class=nav-item><a class=nav-link href="/tag/"><span>Tags</span></a></li>
-        <!-- <li class=nav-item><a class=nav-link ><span> ------ </span></a></li>
+        <!-- <li class=nav-item><a class=nav-link href="/giants/"><span>Giants</span></a></li> -->
+
+
+        <!-- 
+        <li class=nav-item><a class=nav-link ><span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></a></li>
         <li class=nav-item>
           <a class=nav-link>
             <span>
-              <script src="/libs/lunr/lunr.min.js"></script>
+              <script src="/libs/lunr/lunr.js"></script>
+              <script src="lunr.stemmer.support.js"></script>
+              <script src="/libs/lunr/lunr.zh.js"></script>
               <script src="/libs/lunr/lunr_index.js"></script>
               <script src="/libs/lunr/lunrclient.min.js"></script>
               <form id="lunrSearchForm" name="lunrSearchForm">
@@ -35,8 +40,19 @@
               </form>
             </span>
           </a>
-        </li> -->
+        </li>
+        -->
+
       </ul>
     </div>
+    <div class="nav-icon d-none d-lg-inline-flex">
+      <a class=nav-linksmall href="/notebooks" target="_blank"><span><img class="nav-img" src="/assets/img/notebook.svg"></span></a>
+      <a class=nav-linksmall href="/giants" target="_blank"><span><img class="nav-img" src="/assets/img/giant.svg"></span></a>
+      <a class=nav-linksmall href="/musics" target="_blank"><span><img class="nav-img" src="/assets/img/music.svg"></span></a>
+    </div>
+    <div class="nav-icon">
+      <a class=nav-linksmall href="/feed.xml" target="_blank"><span><img class="nav-img" src="/assets/img/rss.svg"></span></a>
+    </div>
+    
   </div>
 </nav>

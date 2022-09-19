@@ -23,19 +23,17 @@
   crossorigin=anonymous>
 
 <!-- locally served -->
+<link rel="stylesheet" href="/css/pure.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/extra.css">
 <link rel=stylesheet href="/libs/academic/academic.min.css">
+<link rel=stylesheet href="/css/codeset.css">
 
-<link rel=stylesheet href="/css/extra.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<!-- highlight + katex + plotly -->
-{{if hascode}}<link rel=stylesheet href="/libs/highlight/github.min.css">{{end}}
-{{if hasmath}}
-  {{insert head_katex.html}}
-{{end}}
-{{if hasplotly}}
-  <script src="/libs/plotly/plotly.min.js"></script>
-{{end}}
-{{if hasmermaid}}
-  <script src="/libs/mermaid/mermaid.min.js"></script>
-  <script>mermaid.initialize({startOnLoad:true});</script>
-{{end}}
+<!-- nutshell + highlight + katex + plotly -->
+{{if hasnutshell}}<script src="/libs/nutshell/nutshell.js"></script>{{end}}
+{{if hascode}}<link rel=stylesheet href="/libs/highlight/styles/atom-one-light.min.css">{{end}}
+{{if hasmath}} {{insert head_katex.html}} {{end}}
+{{if hasplotly}} <script src="/libs/plotly/plotly.min.js"></script> {{end}}
+{{if hasmermaid}} <script src="/libs/mermaid/mermaid.min.js"></script> <script>mermaid.initialize({startOnLoad:true});</script>{{end}}

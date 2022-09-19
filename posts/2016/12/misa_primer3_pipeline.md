@@ -4,10 +4,11 @@ showall = true
 summary = """
   Pipeline of: Identify SSR with misa, then design primers with primer3
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 tags = ["bioinformatics","genomics"]

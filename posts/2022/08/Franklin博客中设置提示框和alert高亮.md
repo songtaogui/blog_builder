@@ -6,8 +6,9 @@ showall = true
 summary = """
   配置我的Flanklin博客高亮提示框
   """
-rss = summary
 
+
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 hascode = true

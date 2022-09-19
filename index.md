@@ -1,12 +1,13 @@
 +++
 title = "tag"
 showall = true
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 hascomment = false
 +++
 
-@def title = "Songtao Gui's Academic Blog"
+@def title = "Songtao Gui's Blog"
 
 <!-- -----------------
      BIOGRAPHY SECTION
@@ -19,7 +20,7 @@ hascomment = false
 
 \img{"/assets/img/person.jpg", class="avatar avatar-circle", alt="Songtao Gui"}
 \portrait{
-  name="Songtao Gui",
+  name="Songtao Gui<br>桂松涛",
   job="Researcher & Developer",
   motto="Being different at all cost.",
   location="Wuhan, China, 430070",
@@ -41,7 +42,7 @@ of Crop Genetic Improvement, Huazhong Agricultural University. My research inter
 - Population genomics and genetics
 - Graphic genomics
 - Multi-omics integration
-I am also co-maintaining the [ZEAMAP](www.zeamap.com) database, which collected multi-omics data in *Zea* populations.
+I am also the co-builder of the [ZEAMAP](http://www.zeamap.com) database v1.0, which collected multi-omics data in *Zea* populations.
 \end{biography}
 
 \shortcv{
@@ -170,7 +171,10 @@ I am also co-maintaining the [ZEAMAP](www.zeamap.com) database, which collected 
 @@
 
 \end{section}
- -->
+
+~~~<hr>~~~
+
+-->
 
 <!-- --------------------
      RECENT POSTS SECTION

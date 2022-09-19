@@ -6,10 +6,11 @@ showall = true
 summary = """
   Useful latex markdown gramma.
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 hascomment = true

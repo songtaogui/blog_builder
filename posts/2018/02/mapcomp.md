@@ -4,10 +4,11 @@ showall = true
 summary = """
   usage of mapcomp: a tool for comparing two genetic maps
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 

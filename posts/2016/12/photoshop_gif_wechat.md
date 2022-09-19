@@ -4,10 +4,11 @@ showall = true
 summary = """
   用photoshop修改gif, 制作微信表情
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 tags = ["windows", "random"]

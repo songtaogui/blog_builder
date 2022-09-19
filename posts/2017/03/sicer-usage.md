@@ -4,10 +4,11 @@ showall = true
 summary = """
   Brief usage of sicer: a chip-seq tool
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 tags = ["bioinformatics", "genomics"]

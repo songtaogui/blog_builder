@@ -5,8 +5,9 @@ var cheerio = require("cheerio");
 
 // don't modify this, it'll be modified on the fly by lunr() in Franklin
 const PATH_PREPEND = "..";
+// const PATH_PREPEND = "";
 
-const HTML_FOLDER  = "../../__site";
+const HTML_FOLDER  = "../../__site/posts";
 const OUTPUT_INDEX = "lunr_index.js";
 
 function isHtml(filename) {
@@ -61,12 +62,13 @@ function readHtml(root, file, fileId) {
 
 function buildIndex(docs) {
     var idx = lunr(function () {
+        // this.use(lunr.zh);
         this.ref('id');
         this.field('t'); // title
         this.field('b'); // body
         docs.forEach(function (doc) {
-                this.add(doc);
-            }, this);
+            this.add(doc);
+        }, this);
         });
     return idx;
 }
@@ -77,7 +79,8 @@ function buildPreviews(docs) {
         var doc = docs[i];
         result[doc["id"]] = {
             "t": doc["t"],
-            "l": doc["l"].replace(/^\.\.\/\.\.\/__site/gi, '/' + PATH_PREPEND)
+            // "l": doc["l"].replace(/^\.\.\/\.\.\/__site/gi, '/' + PATH_PREPEND)
+            "l": doc["l"].replace(/^[\.\/\\]+__site/gi, '/' + PATH_PREPEND)
         }
     }
     return result;
@@ -93,6 +96,8 @@ function main() {
     var prev = buildPreviews(docs);
     var js = "const LUNR_DATA = " + JSON.stringify(idx) + ";\n" +
              "const PREVIEW_LOOKUP = " + JSON.stringify(prev) + ";";
+    // console.log(js)
+    // console.log(idx)
     fs.writeFile(OUTPUT_INDEX, js, function(err) {
         if(err) {
             return console.log(err);

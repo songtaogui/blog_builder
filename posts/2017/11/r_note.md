@@ -4,10 +4,11 @@ showall = true
 summary = """
   My R-language note
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 tags = ["programming", "R"]

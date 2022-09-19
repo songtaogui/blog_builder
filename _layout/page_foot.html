@@ -1,13 +1,19 @@
 {{ isnotpage index.html }}
-</div> <!-- article style -->
+</div> 
+<!-- article style -->
 {{ end }}
 
 {{ if hascomment }} {{ insert comment.html }} {{ end }}
-{{ if hascomment }} {{ insert bttb.html }} {{ end }}
 
 <div class="container">
   <footer class="site-footer">
-    <p class="powered-by">&copy; {{ fill author }}. Last modified: {{ fill fd_mtime }}. <br>Built with <a href="https://franklinjl.org" target="_blank" rel="noopener">Franklin.jl</a> and <a href="https://julialang.org" target="_blank" rel="noopener">Julia</a>.
+    <p class="powered-by">
+      Total visits: <span id="busuanzi_value_site_pv"></span>.<br>
+      Built with <a href="https://franklinjl.org" target="_blank" rel="noopener">Franklin.jl</a> and <a href="https://julialang.org" target="_blank" rel="noopener">Julia</a>.<br>
+      The text is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br>
+      The code is licensed under the <a href="https://mit-license.org/">MIT License</a>.<br>
+      <strong>&copy; {{ fill author }}</strong>. Last modified: {{ fill fd_mtime }}. 
+
       <!-- <span class="float-right" aria-hidden="true">
         <a href="#" class="back-to-top">
           <span class="button_icon">
@@ -15,6 +21,7 @@
           </span>
         </a>
       </span> -->
+
     </p>
   </footer>
 </div>

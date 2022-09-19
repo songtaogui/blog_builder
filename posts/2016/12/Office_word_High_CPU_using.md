@@ -4,10 +4,11 @@ showall = true
 summary = """
   解决word占用cpu过高的办法
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 tags = ["windows"]

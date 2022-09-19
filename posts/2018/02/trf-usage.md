@@ -4,10 +4,11 @@ showall = true
 summary = """
   Brief usage of TRF: a tandem repeats finder
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 

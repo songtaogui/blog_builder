@@ -4,10 +4,11 @@ showall = true
 summary = """
   My note on linux shell commands, mainly bash
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 

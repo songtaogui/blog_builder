@@ -1,5 +1,6 @@
 using FranklinUtils
 using BibParser
+using PlutoStaticHTML
 # using Bibliography
 # ----------------------------------- #
 # Academic blocks // General elements #
@@ -70,18 +71,24 @@ end
 end
 
 # Short CV block with a column for interests and one for education
-@lx function shortcv(; interests=nothing, education=nothing)
+@lx function shortcv(; interests=nothing, education=nothing, language="En")
     io = IOBuffer()
+    interests_hd = "Interests"
+    education_hd = "Education"
+    if language == "Zh"
+        interests_hd = "兴趣"
+        education_hd = "教育经历"
+    end
     write(io, html("""<div class=row>"""))
     if !isnothing(interests)
-        write(io, html("""<div class=col-md-5><h3>Interests</h3><ul class=ul-interests>"""))
+        write(io, html("""<div class=col-md-5><h3>$interests_hd</h3><ul class=ul-interests>"""))
         for i in interests
             write(io, html("""<li>$i</li>"""))
         end
         write(io, html("""</ul></div>"""))
     end
     if !isnothing(education)
-        write(io, html("""<div class=col-md-7><h3>Education</h3><ul class="ul-edu fa-ul">"""))
+        write(io, html("""<div class=col-md-7><h3>$education_hd</h3><ul class="ul-edu fa-ul">"""))
         for (course, school) in education
             write(io, html("""
                 <li><i class="fa-li fas fa-graduation-cap"></i>
@@ -258,7 +265,15 @@ function show_posts(posts; byyear=false)
         end
         rpath = post.first
         title = pagevar(rpath, "title")
-        isnothing(title) && (title = "Untitled")
+        # tags = pagevar(rpath, "tags")
+        if isnothing(title)
+            # @warn "$rpath is untitled"
+            # title = basename(rpath)
+            title = "untitled"
+            # println(stderr,"$rpath with NO title: $title")
+        # else
+            # println(stderr,"YES $rpath : $title")
+        end
         summary = pagevar(rpath, "summary")
         isnothing(summary) && (summary = "")
         date = Dates.format(post.second, dateformat"u d, Y")
@@ -298,7 +313,9 @@ function hfun_recentposts(params)
 end
 
 function hfun_allposts()
-    return show_posts(all_posts(), byyear=true)
+    allposts = all_posts()
+    return show_posts(allposts, byyear=true)
+    # return show_posts(allposts)
 end
 
 
@@ -385,6 +402,9 @@ end
 
 hfun_svg_tag() = """<a href="/tag/" id="tag-icon"><svg width="20" height="20" viewBox="0 0 512 512"><defs><style>.cls-1{fill:#141f38}</style></defs><path class="cls-1" d="M215.8 512a76.1 76.1 0 0 1-54.17-22.44L22.44 350.37a76.59 76.59 0 0 1 0-108.32L242 22.44A76.11 76.11 0 0 1 296.2 0h139.2A76.69 76.69 0 0 1 512 76.6v139.19A76.08 76.08 0 0 1 489.56 270L270 489.56A76.09 76.09 0 0 1 215.8 512zm80.4-486.4a50.69 50.69 0 0 0-36.06 14.94l-219.6 219.6a51 51 0 0 0 0 72.13l139.19 139.19a51 51 0 0 0 72.13 0l219.6-219.61a50.67 50.67 0 0 0 14.94-36.06V76.6a51.06 51.06 0 0 0-51-51zm126.44 102.08A38.32 38.32 0 1 1 461 89.36a38.37 38.37 0 0 1-38.36 38.32zm0-51a12.72 12.72 0 1 0 12.72 12.72 12.73 12.73 0 0 0-12.72-12.76z"/><path class="cls-1" d="M217.56 422.4a44.61 44.61 0 0 1-31.76-13.16l-83-83a45 45 0 0 1 0-63.52L211.49 154a44.91 44.91 0 0 1 63.51 0l83 83a45 45 0 0 1 0 63.52L249.31 409.24a44.59 44.59 0 0 1-31.75 13.16zm-96.7-141.61a19.34 19.34 0 0 0 0 27.32l83 83a19.77 19.77 0 0 0 27.31 0l108.77-108.7a19.34 19.34 0 0 0 0-27.32l-83-83a19.77 19.77 0 0 0-27.31 0l-108.77 108.7z"/><path class="cls-1" d="M294.4 281.6a12.75 12.75 0 0 1-9-3.75l-51.2-51.2a12.8 12.8 0 0 1 18.1-18.1l51.2 51.2a12.8 12.8 0 0 1-9.05 21.85zM256 320a12.75 12.75 0 0 1-9.05-3.75l-51.2-51.2a12.8 12.8 0 0 1 18.1-18.1l51.2 51.2A12.8 12.8 0 0 1 256 320zM217.6 358.4a12.75 12.75 0 0 1-9-3.75l-51.2-51.2a12.8 12.8 0 1 1 18.1-18.1l51.2 51.2a12.8 12.8 0 0 1-9.05 21.85z"/></svg></a>"""
 
+hfun_svg_view() = """<a id="tag-icon"><svg width="20" height="20" class="icon" viewBox="0 0 1024 1024" version="1.1" p-id="3825" width="64" height="64"><path d="M512 416a96 96 0 1 0 0 192 96 96 0 0 0 0-192z m511.952 102.064c-0.016-0.448-0.064-0.864-0.096-1.296a8.16 8.16 0 0 0-0.08-0.656c0-0.32-0.064-0.624-0.128-0.928-0.032-0.368-0.064-0.736-0.128-1.088-0.032-0.048-0.032-0.096-0.032-0.144a39.488 39.488 0 0 0-10.704-21.536c-32.672-39.616-71.536-74.88-111.04-107.072-85.088-69.392-182.432-127.424-289.856-150.8-62.112-13.504-124.576-14.064-187.008-2.64-56.784 10.384-111.504 32-162.72 58.784-80.176 41.92-153.392 99.696-217.184 164.48-11.808 11.984-23.552 24.224-34.288 37.248-14.288 17.328-14.288 37.872 0 55.216 32.672 39.616 71.52 74.848 111.04 107.056 85.12 69.392 182.448 127.408 289.888 150.784 62.096 13.504 124.608 14.096 187.008 2.656 56.768-10.4 111.488-32 162.736-58.768 80.176-41.936 153.376-99.696 217.184-164.48 11.792-12 23.536-24.224 34.288-37.248 5.712-5.872 9.456-13.44 10.704-21.568l0.032-0.128a12.592 12.592 0 0 0 0.128-1.088c0.064-0.304 0.096-0.624 0.128-0.928l0.08-0.656 0.096-1.28c0.032-0.656 0.048-1.296 0.048-1.952l-0.096-1.968zM512 704c-106.032 0-192-85.952-192-192s85.952-192 192-192 192 85.968 192 192c0 106.048-85.968 192-192 192z" p-id="3826"></path></svg></a>"""
+
+
 @delay function hfun_page_tags()
     pagetags = globvar("fd_page_tags")
     pagetags === nothing && return ""
@@ -398,7 +418,11 @@ hfun_svg_tag() = """<a href="/tag/" id="tag-icon"><svg width="20" height="20" vi
     end
     tag = tags[end]
     t = replace(tag, "_" => " ")
-    write(io, """<a href="/tag/$tag/">$t</a></div>""")
+    write(io, """<a href="/tag/$tag/">$t</a>&nbsp;&nbsp;&nbsp;&nbsp;""")
+    write(io, """$(hfun_svg_view())""")
+    # add view times busuanzi:
+    write(io, """<span id="busuanzi_value_page_pv"></span>""")
+    write(io, """</div>""")
     return String(take!(io))
 end
 
@@ -407,7 +431,8 @@ end
 function hfun_achieve_cards()
     me = "Gui Songtao"
     bibfile = joinpath(Franklin.FOLDER_PATH[], "achievements", "achievements.bib")
-    bib = BibParser.parse_file(bibfile, :BibTeX; check=:warn)
+    # check = :error :warn :none
+    bib = BibParser.parse_file(bibfile, :BibTeX; check=:none)
     # sort_bibliography!(bib, :nyt)
     div_achieve = """
     <div class="grid-x grid-margin-x content  content-even">
@@ -425,9 +450,9 @@ function hfun_achieve_cards()
         curb_keywords = split(curb.fields["keywords"], ",")
         curb_authors = join([join(uppercasefirst.(filter(!isempty,[ t.last, t.junior, t.middle, t.particle, t.first])), " ") for t in curb.authors],", ")
         # change the main author's name to uppercase
-        curb_authors = replace(curb_authors, me => uppercase(me))
+        curb_authors = replace(curb_authors, me => "<strong>"*uppercase(me)*"</strong>")
         curb_year = curb.date.year
-        curb_pubinfo = join([curb.in.journal, curb.in.pages, curb.in.volume],", ")
+        curb_pubinfo = join(filter(!isempty,["<strong>"*curb.in.journal*"</strong>", curb.in.pages, curb.in.volume]),", ")
         # generate html
         # access: link, download, cite
         curb_div_access  = ""
@@ -456,8 +481,8 @@ function hfun_achieve_cards()
             <span class="label label-type">$curb_type</span>
             $curb_div_content_kwd
             <div class="achieve-author">$curb_authors</div>
-            <div class="achieve-pubinfo">$curb_pubinfo</div>
             <div class="achieve-year">Publication year: $curb_year</div>
+            <div class="achieve-pubinfo">$curb_pubinfo</div>
         </div>
         """
 
@@ -475,15 +500,13 @@ function hfun_achieve_cards()
     return div_achieve
 end
 
-
-
-
 # generate article only cards, using bib and pdf files in research/bib and research/pdf dir
 # NOTE: the bibfile and pdffile should have same prefix
 function hfun_article_cards()
     me = "Gui Songtao"
     bibfile = joinpath(Franklin.FOLDER_PATH[], "achievements", "achievements.bib")
-    bib = BibParser.parse_file(bibfile, :BibTeX; check=:warn)
+    # check = :error :warn :none
+    bib = BibParser.parse_file(bibfile, :BibTeX; check=:none)
     # sort_bibliography!(bib, :nyt)
     div_achieve = """
     <div class="grid-x grid-margin-x content  content-even">
@@ -501,9 +524,9 @@ function hfun_article_cards()
         curb_keywords = split(curb.fields["keywords"], ",")
         curb_authors = join([join(uppercasefirst.(filter(!isempty,[ t.last, t.junior, t.middle, t.particle, t.first])), " ") for t in curb.authors],", ")
         # change the main author's name to uppercase
-        curb_authors = replace(curb_authors, me => uppercase(me))
+        curb_authors = replace(curb_authors, me => "<strong>"*uppercase(me)*"</strong>")
         curb_year = curb.date.year
-        curb_pubinfo = join([curb.in.journal, curb.in.pages, curb.in.volume],", ")
+        curb_pubinfo = join(filter(!isempty,["<strong>"*curb.in.journal*"</strong>", curb.in.pages, curb.in.volume]),", ")
         # generate html
         # access: link, download, cite
         curb_div_access  = ""
@@ -532,8 +555,8 @@ function hfun_article_cards()
             <span class="label label-type">$curb_type</span>
             $curb_div_content_kwd
             <div class="achieve-author">$curb_authors</div>
-            <div class="achieve-pubinfo">$curb_pubinfo</div>
             <div class="achieve-year">Publication year: $curb_year</div>
+            <div class="achieve-pubinfo">$curb_pubinfo</div>
         </div>
         """
 
@@ -550,3 +573,54 @@ function hfun_article_cards()
     div_achieve *= "</div>"
     return div_achieve
 end
+
+
+
+
+#=
+pluto related functions
+=#
+
+
+# #   hfun_plutohtml(com)
+# # Embed a Pluto notebook via:
+# # https://github.com/rikhuijzer/PlutoStaticHTML.jl
+# function hfun_plutohtml(com)
+#     # file = string(Franklin.content(com.braces[1]))::String
+#     file = string(com[1])
+#     dir = "pluto/"
+#     html_path = dir * file * ".html"
+#     jl_path = dir * file * ".jl"
+#     return """
+#     {{ insert ../$html_path }}
+#     <p>_To run this blog post locally, open <a href="/$jl_path">this notebook</a> with Pluto.jl._</p>
+#     """
+# end
+
+
+@lx function sp(n::Int)
+    return "~~~$(repeat("&nbsp;", n))~~~"
+end
+
+@lx function simplecard(; title="", link="", descr="")
+    nblink = ifelse(isempty(link), "", """
+        <a class=card-link href="$link" target=_blank rel=noopener>Accession</a>
+        """)
+    description = ifelse(isempty(descr), "", """
+        <div class=card-text>$(Franklin.fd2html(descr, internal=true))</div>
+        """)
+    return html("""
+        <div class="card experience course">
+        <div class=card-body>
+        <span class="card-title" style="color:#9558B2;font-size:25px;">$title</span>
+        $description
+        $nblink
+        </div>
+        </div>
+        """)
+end
+
+#=
+Multi citation with doi
+Copied from: https://git.sr.ht/~adigitoleo/adigitoleo.srht.site/tree/main/item/utils.jl
+=#

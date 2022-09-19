@@ -1,9 +1,11 @@
 +++
 hascomment = true
+tags = ["courses"]
 +++
 
 @def title = "Courses"
 
+{{page_tags}}
 
 ## MaizegoSummerTutorial
 

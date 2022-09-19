@@ -4,10 +4,11 @@ showall = true
 summary = """
   How to set up bash on ubuntu on windows on win10
   """
-rss = summary
+
 # img = "/assets/img/preview.jpg"  # preview
 # hero = "/assets/img/cover.jpg"   # cover
 
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 tags = ["programming", "bash", "linux"]

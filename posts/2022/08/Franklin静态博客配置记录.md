@@ -6,8 +6,9 @@ showall = true
 summary = """
   Franklin一些使用技巧记录.
   """
-rss = summary
 
+
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 hascode = true

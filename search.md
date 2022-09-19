@@ -1,6 +1,7 @@
 +++
 title = "search"
 showall = true
+hasnutshell = false
 hasplotly = false
 hasmermaid = false
 hascomment = false
