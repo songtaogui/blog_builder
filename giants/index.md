@@ -115,6 +115,12 @@ hascomment = true
   link="http://captainbed.top/"
 }
 
+\simplecard{
+  title="Mozart's Sheet",
+  descr="A passionate full-stack engineer, writes GO and Python, and knows bioinformatics",
+  link="http://captainbed.top/"
+}
+
 @@
 
 \end{section}

@@ -123,8 +123,6 @@ Generate Julia code using metaprogramming techniques.
 
 ##### Ways suggested in the offical tutorial:
 
-> 
-
 1. define `Dict{Symbol, Expr}` action map;
 2. initialize result variables;
 3. generate code to initialize variables with `generate_init_code`;
