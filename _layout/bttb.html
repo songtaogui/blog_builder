@@ -1,5 +1,48 @@
-<div class="back-to-top-button">
-  <a class="back-to-top-button" href="#">
-    <img src="/assets/img/up.svg" style="width: 100px;">
-  </a>
-</div>
+<a class="js-back-to-top back-to-top-button" href="#">
+  <img src="/assets/img/up.svg" style="width: 100px;">
+</a>
+<!-- <button class="js-back-to-top back-to-top-button" title="BackToTop">︽</button> -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+<script>
+  $(function() {
+    var $win = $(window);
+    var $backToTop = $('.js-back-to-top');
+    // 当用户滚动到离顶部100像素时，展示回到顶部按钮
+    $win.scroll(function() {
+      if ($win.scrollTop() > 100) {
+        $backToTop.show();
+      } else {
+        $backToTop.hide();
+      }
+    });
+    // 当用户点击按钮时，通过动画效果返回头部
+    $backToTop.click(function() {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 200);
+    });
+  });
+</script>
+<style>
+  /* back to top button */
+  .back-to-top-button {
+      display: none;
+      position: fixed;
+      width: 50px;
+      bottom: 3%;
+      right: 3%;
+      z-index: 99;
+      font-size: 15px;
+      border: 0px solid #696969;
+      background-color: #fff;
+      color: #222222;
+      outline: none;
+      cursor: pointer;
+      padding: 7px;
+      border-radius: 40px;
+  }
+  .back-to-top-button:hover {
+      background-color: #c0dbf5;
+      color: #fff;
+  }
+</style>

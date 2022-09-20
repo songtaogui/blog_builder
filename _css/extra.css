@@ -932,8 +932,7 @@ Colorful Alert NoteBox: note, info, warn, error, tip, todo, hack
     color: #040505
 }
 
-/* back to top button */
-
+/* 
 .back-to-top-button {
     bottom: 3%;
     left: 92%;
@@ -946,7 +945,6 @@ Colorful Alert NoteBox: note, info, warn, error, tip, todo, hack
     font-size: 10px;
     border: none;
     outline: none;
-    /* background-color: #3a3a3a; */
     cursor: pointer;
     padding: 7px;
 }
@@ -959,6 +957,7 @@ Colorful Alert NoteBox: note, info, warn, error, tip, todo, hack
     background-color: #f80b0b;
     transform: translateY(20%) rotate(0deg);
 }
+*/
 
 /* .back-to-top-button {
     position: fixed;
