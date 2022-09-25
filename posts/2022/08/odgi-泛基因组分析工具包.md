@@ -131,7 +131,7 @@ pubdate = Date("2022-08-17")
 -M, --matrix-output # 生成pav矩阵的格式, 列: regions, 行: paths/groups
 
 # 性能参数
--t, --threads=N 
+-t, --threads=N
 -P, --progress  # 进度条
 -h, --help
 
@@ -150,8 +150,8 @@ pubdate = Date("2022-08-17")
 
   $$ ratio = \dfrac{\sum len(N_{ovlp})}{\sum len(N_{all})} $$
 
-- `-p`**非常有用!!!**, 如果不加分组信息, 会对每个path都输出一个pav结果, 文件大小轻松上TB级别!!!
-- `-M`输出pav矩阵, 跟`-B`一起用, 很方便得到PAV的0/1矩阵
+- `-p`\sp{1}**非常有用!!!**, 如果不加分组信息, 会对每个path都输出一个pav结果, 文件大小轻松上TB级别!!!
+- `-M`\sp{1}输出pav矩阵, 跟`-B`一起用, 很方便得到PAV的0/1矩阵
 - 可以不局限于一个ref的path, 可以对所有的path都鉴定PAV:
 
 \bash{

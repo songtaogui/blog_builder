@@ -28,6 +28,14 @@ hascomment = true
 \sectionheading{"", class="col-12 col-lg-4"}
 
 @@col-12,col-lg-8
+
+\simplecard{
+  title="Wenjie Wei",
+  descr="A future star on Bioinformatics and CS",
+  link="https://www.wjwei.blog/",
+  theme="tip"
+}
+
 \simplecard{
   title="Erik Garrison",
   descr="Who plays with graph genome, respect!",
@@ -77,7 +85,7 @@ hascomment = true
 }
 
 \simplecard{
-  title="生信爱好者周刊",
+  title="Bioinfo weekly",
   descr="shixianwang/weekly, 每周日更新生信相关的研究和动态",
   link="https://shixiangwang.github.io/weekly/"
 }
@@ -97,6 +105,13 @@ hascomment = true
 \sectionheading{"", class="col-12 col-lg-4"}
 
 @@col-12,col-lg-8
+
+\simplecard{
+  title="Invenia Blog",
+  descr="Blogging About Electricity Grids, Julia, and Machine Learning",
+  link="https://invenia.github.io/blog/postlist/"
+}
+
 \simplecard{
   title="OI WiKi",
   descr="**OI** (Olympiad Informatics) related CS knowledge list, Learning them!",
@@ -118,7 +133,13 @@ hascomment = true
 \simplecard{
   title="Mozart's Sheet",
   descr="A passionate full-stack engineer, writes GO and Python, and knows bioinformatics",
-  link="http://captainbed.top/"
+  link="https://a2htray.github.io/"
+}
+
+\simplecard{
+  title="Frames Catherine White",
+  descr="ML scientist, developer of lots of great Julia PKGs, writes blogs about julia",
+  link="https://www.oxinabox.net/"
 }
 
 @@

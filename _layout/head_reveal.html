@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="sKCEBeALSs13uui0cWMviq9hlm0rPByKQKNHnOdq-d0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{title}}</title>
+    <!-- {{insert stylesheets.html}} -->
+    <link rel=stylesheet href="/css/admonition-reveal.css">
+    <link rel="icon" href="/assets/favicon-bright.svg">
+    <link rel="stylesheet" href="/libs/reveal/dist/reset.css">
+    <link rel="stylesheet" href="/libs/reveal/dist/reveal.css">
+    {{isnotdef revealtheme}}<link rel="stylesheet" href="/libs/reveal/dist/theme/simple.css">{{end}}
+    {{isdef revealtheme}}<link rel="stylesheet" href="/libs/reveal/dist/theme/{{revealtheme}}.css">{{end}}
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/libs/reveal/plugin/highlight/atom-one.css">
+</head>
+
+<body>
+    {{isdef shownavbar}} {{insert navbar.html}} {{end}}
+    <div class="reveal">

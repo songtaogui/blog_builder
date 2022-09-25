@@ -1,5 +1,5 @@
 +++
-title = "notes_on_franklin_gramma"
+title = "Notes on franklin's gramma"
 tags = ["franklin","julia","hack"]
 summary = """
     learn franklin's markdown gramma and make some DIY
@@ -52,9 +52,6 @@ hascomment = true
 - HTML entities supported: `&rarr;` => &rarr;
 - `\\` for line break
 - `~~~ <some html things> ~~~` for insert raw html
-
-Break me here -> \\ <- here
-
 - `\toc` or `\tableofcontents` for TOC => in a `franklin-toc` div block, modify `.franklin-toc ol` or `.franklin-toc li` in CSS for styling, set `@def mintoclevel=1` and `@def maxtoclevel=3` to control the header levels
 - both single and double back-ticks represent inline code (double back-ticks are useful when code contain `` ` ``): ``"`"``;
 }
@@ -105,10 +102,14 @@ This may also not so convenient, what if we:
 
 ### Page variables
 
-}
+\bnote{Page variables}{
+
+define them with `@def`:
+
+\markdown{
 @def author = "songtaogui"
 
-# if text are multi-lines, they MUST be indented
+ <!-- if text are multi-lines, they MUST be indented -->
 @def some_str = """
     abc
     def
@@ -118,6 +119,12 @@ This may also not so convenient, what if we:
 or define them within `+++` block, the content between `+++` will be evaluated as julia code, all variables will be consided as page variables.
 
 using `{{fill var}}` function to retrieve the page variables: `{{fill author}}`
+
+\hwarn{Updated: 20220921}{
+The latest version of Franklin (Xranklin.jl) deprecates the using of `@def`, so here we recommend the use of toml inside `+++` for var definition.
+}
+
+}
 
 ### HTML functions
 
@@ -135,6 +142,8 @@ list of buildin Franklin HTML functions:
 
 ### Global page variables
 
+\binfo{Global page var}{
+
 - `author`
 - `prepath`,`prefix`,`base_path`
 - `date_format`
@@ -144,4 +153,10 @@ list of buildin Franklin HTML functions:
 - `autocode`
 - `automath`
 
-Refer to other buildin variables [here](https://franklinjl.org/syntax/page-variables/).
+> Refer to other buildin variables [here](https://franklinjl.org/syntax/page-variables/).
+}
+
+
+
+
+

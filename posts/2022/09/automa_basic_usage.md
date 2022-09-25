@@ -1,13 +1,10 @@
 +++
-title = "automa_basic_usage"
+title = "Automa.jl basic usage"
 tags = ["julia","bioinformatics","automa"]
 summary = """
     Learn how to write parser using automa!
     """
 pubdate = Date("2022-09-14")
-
-# img = "/assets/img/preview.jpg"  # preview
-# hero = "/assets/img/cover.jpg"   # cover
 
 # >>>>CONTROLS>>>>
 hasnutshell = true
@@ -20,7 +17,7 @@ hascomment = true
 {{page_tags}}
 
 
-\bwarn{BioJulia is awesome, but the tutorials are generally outdated}{
+\hwarn{BioJulia is awesome, but the tutorials are generally outdated}{
 When I first read the blogs in [BioJulia](https://biojulia.net/post), I feel like to make Julia as my main language for bioinformatics related works. However, the BioJulia community suddenly stopped being active several years ago, maybe the core members were busy (re)building useful BioJulia packages.
 
 The package Automa.jl is widely used to generate file parsers in BioJulia, but the [official tutorial](https://biojulia.net/Automa.jl/latest/index.html) for Automa was not so intuitive for newbies like me, and the blog that introduced Automa in BioJulia was stucked in [Part1](https://biojulia.net/post/automa1/).

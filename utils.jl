@@ -1,6 +1,8 @@
 using FranklinUtils
 using BibParser
 using PlutoStaticHTML
+using Formatting
+
 # using Bibliography
 # ----------------------------------- #
 # Academic blocks // General elements #
@@ -270,7 +272,7 @@ function show_posts(posts; byyear=false)
             # @warn "$rpath is untitled"
             # title = basename(rpath)
             title = "untitled"
-            # println(stderr,"$rpath with NO title: $title")
+            println(stderr,"$rpath with NO title: $title")
         # else
             # println(stderr,"YES $rpath : $title")
         end
@@ -405,7 +407,7 @@ hfun_svg_tag() = """<a href="/tag/" id="tag-icon"><svg width="20" height="20" vi
 hfun_svg_view() = """<a id="tag-icon"><svg width="20" height="20" class="icon" viewBox="0 0 1024 1024" version="1.1" p-id="3825" width="64" height="64"><path d="M512 416a96 96 0 1 0 0 192 96 96 0 0 0 0-192z m511.952 102.064c-0.016-0.448-0.064-0.864-0.096-1.296a8.16 8.16 0 0 0-0.08-0.656c0-0.32-0.064-0.624-0.128-0.928-0.032-0.368-0.064-0.736-0.128-1.088-0.032-0.048-0.032-0.096-0.032-0.144a39.488 39.488 0 0 0-10.704-21.536c-32.672-39.616-71.536-74.88-111.04-107.072-85.088-69.392-182.432-127.424-289.856-150.8-62.112-13.504-124.576-14.064-187.008-2.64-56.784 10.384-111.504 32-162.72 58.784-80.176 41.92-153.392 99.696-217.184 164.48-11.808 11.984-23.552 24.224-34.288 37.248-14.288 17.328-14.288 37.872 0 55.216 32.672 39.616 71.52 74.848 111.04 107.056 85.12 69.392 182.448 127.408 289.888 150.784 62.096 13.504 124.608 14.096 187.008 2.656 56.768-10.4 111.488-32 162.736-58.768 80.176-41.936 153.376-99.696 217.184-164.48 11.792-12 23.536-24.224 34.288-37.248 5.712-5.872 9.456-13.44 10.704-21.568l0.032-0.128a12.592 12.592 0 0 0 0.128-1.088c0.064-0.304 0.096-0.624 0.128-0.928l0.08-0.656 0.096-1.28c0.032-0.656 0.048-1.296 0.048-1.952l-0.096-1.968zM512 704c-106.032 0-192-85.952-192-192s85.952-192 192-192 192 85.968 192 192c0 106.048-85.968 192-192 192z" p-id="3826"></path></svg></a>"""
 
 
-@delay function hfun_page_tags()
+@delay function hfun_page_tags( )
     pagetags = globvar("fd_page_tags")
     pagetags === nothing && return ""
     io = IOBuffer()
@@ -501,7 +503,7 @@ function hfun_achieve_cards()
 end
 
 # generate article only cards, using bib and pdf files in research/bib and research/pdf dir
-# NOTE: the bibfile and pdffile should have same prefix
+# NOTE: the bibfile and pdffile should have same prefix 
 function hfun_article_cards()
     me = "Gui Songtao"
     bibfile = joinpath(Franklin.FOLDER_PATH[], "achievements", "achievements.bib")
@@ -574,7 +576,7 @@ function hfun_article_cards()
     return div_achieve
 end
 
-
+ 
 
 
 #=
@@ -598,29 +600,104 @@ pluto related functions
 # end
 
 
-@lx function sp(n::Int)
+@lx function sp(n)
     return "~~~$(repeat("&nbsp;", n))~~~"
 end
 
-@lx function simplecard(; title="", link="", descr="")
+@lx function br(n)
+    return "~~~$(repeat("<br>", n))~~~"
+end
+
+@lx function randcomma(;str="")
+    strs = split(str,",")
+    return rand(strs)
+end
+
+@lx function crand(s)
+    themes= ["note","note","warn","info","tip","hack","error","todo"]
+    theme = rand(themes)
+    return html("""
+    <span class="cadmon sadmon-$theme">$s</span>
+    """)
+end
+
+@lx function Crand(s)
+    themes= ["note","note","warn","info","tip","hack","error","todo"]
+    theme = rand(themes)
+    return html("""
+    <span class="Cadmon Sadmon-$theme">$s</span>
+    """)
+end
+
+@lx function srand(s)
+    themes= ["note","note","warn","info","tip","hack","error","todo"]
+    theme = rand(themes)
+    return html("""
+    <span class="sadmon sadmon-$theme">$s</span>
+    """)
+end
+
+@lx function Srand(s)
+    themes= ["note","note","warn","info","tip","hack","error","todo"]
+    theme = rand(themes)
+    return html("""
+    <span class="Sadmon Sadmon-$theme">$s</span>
+    """)
+end
+
+@lx function arand(s)
+    themes= ["note","note","warn","info","tip","hack","error","todo"]
+    theme = rand(themes)
+    return html("""
+    <div class="aadmon aadmon-$theme">$s</div>
+    """)
+end
+
+@lx function simplecard(; title="", link="", descr="", theme="rand")
+    themes= ["note","note","warn","info","tip","hack","error","todo"]
+    if theme == "rand"
+        theme = rand(themes)
+    end
+    titleinfo = ifelse(isempty(title), "", """
+    <span class="card-title Sadmon Sadmon-$theme" 
+          style="padding-left:0.4em;padding-right:0.5em;padding-top:0.1em">
+          $title
+    </span>
+    """)
     nblink = ifelse(isempty(link), "", """
-        <a class=card-link href="$link" target=_blank rel=noopener>Accession</a>
+    <a class=card-link href="$link" target=_blank rel=noopener>
+        <span class="sadmon sadmon-$theme">Accession</span>
+    </a>
         """)
     description = ifelse(isempty(descr), "", """
-        <div class=card-text>$(Franklin.fd2html(descr, internal=true))</div>
-        """)
+    <hr style="margin: 0rem">
+    <div class=card-text>$(Franklin.fd2html(descr, internal=true))</div>
+    """)
     return html("""
         <div class="card experience course">
         <div class=card-body>
-        <span class="card-title" style="color:#9558B2;font-size:25px;">$title</span>
-        $description
+        $titleinfo
         $nblink
+        $description
         </div>
         </div>
         """)
+end
+
+# pattern should use C style Formatting format: %s
+@lx function pout(;str="", pattern="%s")
+    outstr = "~~~" * sprintf1(pattern, str) * "~~~"
+    return ifelse(isempty(str), "", outstr)
 end
 
 #=
 Multi citation with doi
 Copied from: https://git.sr.ht/~adigitoleo/adigitoleo.srht.site/tree/main/item/utils.jl
 =#
+
+#=
+############################################
+####### Reveal.js Related Functions ########
+############################################
+=#
+

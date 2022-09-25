@@ -5,13 +5,14 @@ hasnutshell = false
 hasplotly = false
 hasmermaid = false
 hascomment = true
+hidetitle = true
 # <<<<CONTROLS<<<<
 +++
 
-> Find the playlist [HERE](https://music.163.com/playlist?id=7627064833&userid=134399768)
 
 ---
-
+> Find the playlist [HERE](https://music.163.com/playlist?id=7627064833&userid=134399768)
+---
 ~~~
 <div class="Aplayer">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
@@ -103,7 +104,7 @@ hascomment = true
     transition-property: background-color, border-color, border-radius, padding, margin, color, opacity;
     overflow: auto;
     margin: 0px;
-    /* min-height: 1000px; */
+    max-width: 900px;
     padding: 0px;
     list-style-type: none;
     list-style-image: none;
@@ -128,3 +129,36 @@ left: 0 !important;
 
 
 
+
+~~~
+
+<!--看板 白猫-->
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script>
+      L2Dwidget.init({
+        "model": {
+          jsonPath: "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", <!--这里改模型，前面后面都要改-->
+          "scale": 1
+        },
+        "display": {
+          "position": "left", <!--设置看板娘的上下左右位置-->
+          "width": 100,
+          "height": 200,
+          "hOffset": 0,
+          "vOffset": 0
+        },
+        "mobile": {
+          "show": true,
+          "scale": 0.5
+        },
+        "react": {
+          "opacityDefault": 0.9, <!--设置透明度-->
+          "opacityOnHover": 0.5
+        }
+      });
+      window.onload = function() {
+        $("#live2dcanvas").attr("style", "position: fixed; opacity: 0.9;right: 0%;bottom:1%;z-index: 1;pointer-events: none;margin-top:0%;")
+      }
+    </script>
+
+~~~

@@ -1,5 +1,5 @@
 +++
-title = "add_visitor_stat_to_my_blog"
+title = "Add visitor stat to my blog"
 tags = ["blog","hack"]
 summary = """
     Using busuanzi.js to stat the visitors in my blog.

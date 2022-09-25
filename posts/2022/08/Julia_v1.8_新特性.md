@@ -1,5 +1,5 @@
 +++
-title = "Julia_v1.8_新特性"
+title = "Julia v1.8 新特性"
 # tags = [ "programming","bioinformatics","genetics","paper","work","daily","random","insight", ... ]
 tags = ["Julia"]
 showall = true

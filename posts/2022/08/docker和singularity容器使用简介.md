@@ -229,10 +229,6 @@ singularity build xxx.sif xxx.def
 | zypper         |                                    |
 
 
-
-
-
-
 #### Sections
 
 

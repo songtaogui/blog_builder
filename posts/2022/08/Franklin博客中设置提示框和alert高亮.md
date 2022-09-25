@@ -19,7 +19,12 @@ pubdate = Date("2022-08-12")
 
 {{page_tags}}
 
-\toc
+\herror{2022年9月21日更新:}{
+
+我更改了CSS规则, 与该博文中的css差别较大, 博文中所有track和alert的展示也与文中css代码不一致, 具体请以该博文中的**CSS代码**为准。
+
+}
+
 
 ## 话不多说先上效果
 
@@ -35,6 +40,15 @@ pubdate = Date("2022-08-12")
 \btodo{blahblah}{I am some todo}
 \bhack{blahblah}{I am some hack}
 
+\hnote{blahblah}{I am some note}
+\hwarn{blahblah}{I am some warn}
+\herror{blahblah}{I am some error}
+\htip{blahblah}{I am some tip}
+\hinfo{blahblah}{I am some info}
+\htodo{blahblah}{I am some todo}
+\hhack{blahblah}{I am some hack}
+
+
 ### 各种alert信息
 
 \anote{note}
@@ -44,6 +58,8 @@ pubdate = Date("2022-08-12")
 \ainfo{info}
 \atodo{todo}
 \ahack{hack}
+\ainfo{Alert-TXT} 
+
 
 ### 各种inline高亮
 
@@ -53,11 +69,13 @@ I contain inline \Snote{note}\Swarn{warn}\Serror{error}\Stip{tip}\Sinfo{info}\St
 
 I contain inline \cnote{note}\cwarn{warn}\cerror{error}\ctip{tip}\cinfo{info}\ctodo{todo}\chack{hack} and normal texts.
 
+I contain inline \Cnote{note}\Cwarn{warn}\Cerror{error}\Ctip{tip}\Cinfo{info}\Ctodo{todo}\Chack{hack} and normal texts.
+
 ## 具体实现
 
 1. 在`config.md`中定义如下函数:
 
-```
+\markdown{
 
 <!-- Colorful NoteBoxes: note, info, warn, error, tip, todo, hack -->
 \newcommand{\bnote}[2]{ @@box-note  @@title 📘 #1@@ @@content #2 @@ @@}
@@ -104,11 +122,11 @@ I contain inline \cnote{note}\cwarn{warn}\cerror{error}\ctip{tip}\cinfo{info}\ct
 \newcommand{\ctodo}[1]{ \span{color:#FF7F00}{!#1}}
 \newcommand{\chack}[1]{ \span{color:#4D4D4D}{!#1}}
 
-```
+}
 
-2. 配置对应的css信息:
+1. 配置对应的css信息:
 
-```
+\css{
 
 /* ==================================================================
 Colorful NoteBox: note, info, warn, error, tip, todo, hack
@@ -394,6 +412,6 @@ Colorful Alert NoteBox: note, info, warn, error, tip, todo, hack
     color: #040505
 }
 
-```
+}
 
-3. 可以愉快地使用了, Franklin赛高!
+可以愉快地使用了, Franklin赛高!

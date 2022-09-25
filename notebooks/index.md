@@ -13,15 +13,35 @@ hascomment = false
 @@col-12,col-lg-8
 
 \simplecard{
+    title="My bioinformatics thoughts",
+    link="/notebooks/bioinfomatics",
+    descr="""
+          Record thoughts and learning processes on bioinformatics.
+          """,
+    theme="note"
+}
+
+
+
+\simplecard{
   title="Statistical rethinking in Julia",
   descr="Learning [Statistical rethinking](https://xcelab.net/rm/statistical-rethinking/) with Julia",
-  link="/notebooks/statistical_rethinking"
+  link="/notebooks/statistical_rethinking",
+  theme="error"
 }
 
 \simplecard{
   title="Graph theory and Network analysis in Julia",
   descr="Learning Graph theory and some applications in Biology, with Julia",
-  link="/notebooks/biology_and_graph"
+  link="/notebooks/biology_and_graph",
+  theme="warn"
+}
+
+\simplecard{
+  title="Julia Cheat Sheet",
+  descr="Julia Cheat Sheet (Zh version)",
+  link="https://juliadocs.github.io/Julia-Cheat-Sheet/zh-cn/",
+  theme="tip"
 }
 
 @@

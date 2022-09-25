@@ -1,3 +1,5 @@
+{{isnotdef revealslide}}
+
 {{ isnotpage index.html }}
   </div> <!--article container -->
 </article>
@@ -39,5 +41,8 @@
       ]
     })
   </script> -->
-
-</html>
+  
+  </html>
+  
+{{ end }}
+{{isdef revealslide}} {{insert foot_reveal.html}} {{end}}

@@ -22,13 +22,13 @@ hascomment = true
 # - `"post"`: posts/name-of-post.md
 
 dateformat = "yearmonth"
+generate_sitemap = true
+sitemap_changefreq = "weekly"
 # RSS setup
 website_title = "SongtaoGui's Blog"
 website_descr = "SongtaoGui's Blog using Franklin"
 website_url   = "https://songtaogui.github.io/"
 +++
-
-\newcommand{\icon}[1]{~~~<i class="fas fa-~~~!#1~~~"></i>~~~}
 
 
 <!--
@@ -37,19 +37,30 @@ Useful HTML snippets
 * \refblank{...} for a link with target blank
 * \lineskip forces skipping of a line somewhere
 -->
-
-\newcommand{\blurb}[1]{
-    ~~~
-    <span style="font-size:24px;font-weight:300;">!#1</span>
-    ~~~
-}
-\newcommand{\refblank}[2]{
-    ~~~
-    <a href="!#2" target="_blank" rel="noopener noreferrer">#1</a>
-    ~~~
-}
+\newcommand{\blurb}[1]{~~~<span style="font-size:24px;font-weight:300;">!#1</span>~~~}
+\newcommand{\refblank}[2]{~~~<a href="!#2" target="_blank" rel="noopener noreferrer">#1</a>~~~}
+\newcommand{\checkbx}{~~~<input class="checkbox" type="checkbox" checked="checked">~~~}
+\newcommand{\checkbo}{~~~<input class="checkbox" type="checkbox" >~~~}
 \newcommand{\lineskip}{@@blank@@}
 \newcommand{\skipline}{\lineskip}
+\newcommand{\icon}[1]{~~~<i class="fas fa-~~~!#1~~~"></i>~~~}
+\newcommand{\kbd}[1]{ ~~~<kbd>#1</kbd>~~~ }
+\newcommand{\span}[2]{~~~<span style="display:inline-block;!#1">~~~!#2~~~</span>~~~}
+\newcommand{\del}[1]{~~~<del>#1</del>~~~}
+\newcommand{\figenv}[3]{~~~<figure style="text-align:center;"><img src="!#2" style="padding:0;#3" alt="#1"/><figcaption>#1</figcaption></figure>~~~}
+\newcommand{\figdiy}[2]{~~~<figure><img src="!#1" !#2 /></figure>~~~}
+\newcommand{\imgdiy}[2]{~~~<img src="!#1" !#2 />~~~}
+\newcommand{\smindent}[1]{\span{width:45px;text-align:right;color:slategray;}{#1}}
+\newcommand{\smnote}[1]{\style{font-size:85%;line-height:0em;}{#1}}
+\newcommand{\emdash}{&#8212;}
+\newcommand{\lskip}{~~~<div style="height:1em;"></div>~~~}
+\newcommand{\indent}[2]{
+  ~~~<div class="indent-block" style="margin-left: !#1 !important">~~~
+  #2
+  ~~~</div>~~~
+}
+
+
 \newcommand{\esc}[2]{
     ```julia:esc__!#1
     #hideall
@@ -68,40 +79,9 @@ Useful HTML snippets
     \textoutput{esc__!#1}
 }
 
-\newcommand{\span}[2]{~~~<span style="display:inline-block;!#1">~~~!#2~~~</span>~~~}
-\newcommand{\del}[1]{~~~<del>#1</del>~~~}
-\newcommand{\figenv}[3]{
-~~~
-<figure style="text-align:center;">
-<img src="!#2" style="padding:0;#3" alt="#1"/>
-<figcaption>#1</figcaption>
-</figure>
-~~~
-}
-
-\newcommand{\figdiy}[2]{
-~~~
-<figure>
-<img src="!#1" !#2 />
-</figure>
-~~~
-}
-
-\newcommand{\smindent}[1]{\span{width:45px;text-align:right;color:slategray;}{#1}}
-\newcommand{\smnote}[1]{\style{font-size:85%;line-height:0em;}{#1}}
-
-\newcommand{\emdash}{&#8212;}
-
-\newcommand{\lskip}{
-  ~~~
-  <div style="height:1em;"></div>
-  ~~~
-}
-
-
 \newcommand{\fieldset}[3]{
   ~~~
-  <fieldset class="!#1"><legend class="!#1-legend">#2</legend>
+  <fieldset class="!#1"><legend class="!#1">#2</legend>
   ~~~
   #3
   ~~~
@@ -109,254 +89,380 @@ Useful HTML snippets
   ~~~
 }
 
+\newcommand{\admonition}[3]{
+  ~~~
+  <fieldset class="admon admon-!#1">
+  <legend class="admon-legend admon-legend-!#1">#2</legend>
+  ~~~
+  #3
+  ~~~
+  </fieldset>
+  ~~~
+}
 
+\newcommand{\hadmonition}[3]{
+  ~~~
+  <fieldset class="hadmon admon-!#1"><legend class="hadmon-legend admon-legend-!#1">#2</legend>
+  ~~~
+  #3
+  ~~~
+  </fieldset>
+  ~~~
+}
+<!-- alias of admonitions -->
+\newcommand{ \note   }[1]{ \admonition{ note    }{ Note  }{#1}}
+\newcommand{ \info   }[1]{ \admonition{ info    }{ Info  }{#1}}
+\newcommand{ \tip    }[1]{ \admonition{ tip     }{ Tip   }{#1}}
+\newcommand{ \warn   }[1]{ \admonition{ warn    }{ Warn  }{#1}}
+\newcommand{ \error  }[1]{ \admonition{ error   }{ Error }{#1}}
+\newcommand{ \todo   }[1]{ \admonition{ todo    }{ Todo  }{#1}}
+\newcommand{ \hack   }[1]{ \admonition{ hack    }{ Hack  }{#1}}
+
+<!-- alias of badmonitions: box-admon with diy header -->
+\newcommand{ \bnote   }[2]{ \admonition{ note  }{ 📘#1 }{#2}}
+\newcommand{ \binfo   }[2]{ \admonition{ info  }{ 🥑#1 }{#2}}
+\newcommand{ \btip    }[2]{ \admonition{ tip   }{ 🍏#1 }{#2}}
+\newcommand{ \bwarn   }[2]{ \admonition{ warn  }{ 🍇#1 }{#2}}
+\newcommand{ \berror  }[2]{ \admonition{ error }{ 🐞#1 }{#2}}
+\newcommand{ \btodo   }[2]{ \admonition{ todo  }{ 🍊#1 }{#2}}
+\newcommand{ \bhack   }[2]{ \admonition{ hack  }{ 💻#1 }{#2}}
+
+<!-- alias of hadmonitions: highlight-admon with diy header -->
+\newcommand{ \hnote  }[2]{ \hadmonition{ note  }{#1}{#2}}
+\newcommand{ \hinfo  }[2]{ \hadmonition{ info  }{#1}{#2}}
+\newcommand{ \htip   }[2]{ \hadmonition{ tip   }{#1}{#2}}
+\newcommand{ \hwarn  }[2]{ \hadmonition{ warn  }{#1}{#2}}
+\newcommand{ \herror }[2]{ \hadmonition{ error }{#1}{#2}}
+\newcommand{ \htodo  }[2]{ \hadmonition{ todo  }{#1}{#2}}
+\newcommand{ \hhack  }[2]{ \hadmonition{ hack  }{#1}{#2}}
+
+<!-- alias of aadmonitions: alert-admon -->
+\newcommand{ \aadmonition}[2]{~~~<div class="aadmon aadmon-!#1">~~~#2~~~</div>~~~}
+\newcommand{ \anote  }[1]{ \aadmonition{ note  }{ #1 }}
+\newcommand{ \ainfo  }[1]{ \aadmonition{ info  }{ #1 }}
+\newcommand{ \atip   }[1]{ \aadmonition{ tip   }{ #1 }}
+\newcommand{ \awarn  }[1]{ \aadmonition{ warn  }{ #1 }}
+\newcommand{ \aerror }[1]{ \aadmonition{ error }{ #1 }}
+\newcommand{ \atodo  }[1]{ \aadmonition{ todo  }{ #1 }}
+\newcommand{ \ahack  }[1]{ \aadmonition{ hack  }{ #1 }}
+
+<!-- alias of sadmonitions: string-admon light -->
+\newcommand{\sadmonition}[2]{~~~<span class="sadmon sadmon-!#1">~~~!#2~~~</span>~~~}
+\newcommand{ \snote  }[1]{ \sadmonition{ note  }{ #1 }}
+\newcommand{ \sinfo  }[1]{ \sadmonition{ info  }{ #1 }}
+\newcommand{ \stip   }[1]{ \sadmonition{ tip   }{ #1 }}
+\newcommand{ \swarn  }[1]{ \sadmonition{ warn  }{ #1 }}
+\newcommand{ \serror }[1]{ \sadmonition{ error }{ #1 }}
+\newcommand{ \stodo  }[1]{ \sadmonition{ todo  }{ #1 }}
+\newcommand{ \shack  }[1]{ \sadmonition{ hack  }{ #1 }}
+
+<!-- alias of Sadmonitions: String-admon dark -->
+\newcommand{\Sadmonition}[2]{~~~<span class="Sadmon Sadmon-!#1">~~~!#2~~~</span>~~~}
+\newcommand{ \Snote  }[1]{ \Sadmonition{ note  }{ #1 }}
+\newcommand{ \Sinfo  }[1]{ \Sadmonition{ info  }{ #1 }}
+\newcommand{ \Stip   }[1]{ \Sadmonition{ tip   }{ #1 }}
+\newcommand{ \Swarn  }[1]{ \Sadmonition{ warn  }{ #1 }}
+\newcommand{ \Serror }[1]{ \Sadmonition{ error }{ #1 }}
+\newcommand{ \Stodo  }[1]{ \Sadmonition{ todo  }{ #1 }}
+\newcommand{ \Shack  }[1]{ \Sadmonition{ hack  }{ #1 }}
+
+<!-- alias of Cadmonitions: color-admon -->
+\newcommand{ \Cadmonition}[2]{~~~<span class="Cadmon Sadmon-!#1">~~~!#2~~~</span>~~~}
+\newcommand{ \Cnote  }[1]{ \Cadmonition{ note  }{!#1}}
+\newcommand{ \Cinfo  }[1]{ \Cadmonition{ info  }{!#1}}
+\newcommand{ \Ctip   }[1]{ \Cadmonition{ tip   }{!#1}}
+\newcommand{ \Cwarn  }[1]{ \Cadmonition{ warn  }{!#1}}
+\newcommand{ \Cerror }[1]{ \Cadmonition{ error }{!#1}}
+\newcommand{ \Ctodo  }[1]{ \Cadmonition{ todo  }{!#1}}
+\newcommand{ \Chack  }[1]{ \Cadmonition{ hack  }{!#1}}
+
+<!-- alias of cadmonitions: color-admon -->
+\newcommand{ \cadmonition}[2]{~~~<span class="cadmon sadmon-!#1">~~~!#2~~~</span>~~~}
+\newcommand{ \cnote  }[1]{ \cadmonition{ note  }{!#1}}
+\newcommand{ \cinfo  }[1]{ \cadmonition{ info  }{!#1}}
+\newcommand{ \ctip   }[1]{ \cadmonition{ tip   }{!#1}}
+\newcommand{ \cwarn  }[1]{ \cadmonition{ warn  }{!#1}}
+\newcommand{ \cerror }[1]{ \cadmonition{ error }{!#1}}
+\newcommand{ \ctodo  }[1]{ \cadmonition{ todo  }{!#1}}
+\newcommand{ \chack  }[1]{ \cadmonition{ hack  }{!#1}}
+
+<!-- CODE BLOCK -->
 \newcommand{\julia}[1]{
-~~~
-<fieldset class="code-julia"><legend class="code-julia-legend">julia</legend>
-~~~
+~~~<fieldset class="code code-julia"><legend class="code-legend code-legend-julia">julia</legend>~~~
 ```julia
 #1
 ```
-~~~
-<div class="code-lag">julia</div></fieldset>
-~~~
+~~~<div class="code-lag">julia</div></fieldset>~~~
 }
 
 \newcommand{\markdown}[1]{
-~~~
-<fieldset class="code-markdown"><legend class="code-markdown-legend">markdown</legend>
-~~~
+~~~<fieldset class="code code-markdown"><legend class="code-legend code-legend-markdown">markdown</legend>~~~
 ```markdown
 #1
 ```
-~~~
-<div class="code-lag">markdown</div></fieldset>
-~~~
+~~~<div class="code-lag">markdown</div></fieldset>~~~
 }
 
 
 \newcommand{\bash}[1]{
-~~~
-<fieldset class="code-bash"><legend class="code-bash-legend">bash</legend>
-~~~
+~~~<fieldset class="code code-bash"><legend class="code-legend code-legend-bash">bash</legend>~~~
 ```bash
 #1
 ```
-~~~
-<div class="code-lag">bash</div></fieldset>
-~~~
+~~~<div class="code-lag">bash</div></fieldset>~~~
 }
 
 \newcommand{\shell}[1]{
-~~~
-<fieldset class="code-shell"><legend class="code-shell-legend">shell</legend>
-~~~
+~~~<fieldset class="code code-shell"><legend class="code-legend code-legend-shell">shell</legend>~~~
 ```shell
 #1
 ```
-~~~
-<div class="code-lag">shell</div></fieldset>
-~~~
+~~~<div class="code-lag">shell</div></fieldset>~~~
 }
 
 \newcommand{\perl}[1]{
-~~~
-<fieldset class="code-perl"><legend class="code-perl-legend">perl</legend>
-~~~
+~~~<fieldset class="code code-perl"><legend class="code-legend code-legend-perl">perl</legend>~~~
 ```perl
 #1
 ```
-~~~
-<div class="code-lag">perl</div></fieldset>
-~~~
+~~~<div class="code-lag">perl</div></fieldset>~~~
 }
 
 
 
 \newcommand{\rust}[1]{
-~~~
-<fieldset class="code-rust"><legend class="code-rust-legend">rust</legend>
-~~~
+~~~<fieldset class="code code-rust"><legend class="code-legend code-legend-rust">rust</legend>~~~
 ```Rust
 #1
 ```
-~~~
-<div class="code-lag">rust</div></fieldset>
-~~~
+~~~<div class="code-lag">rust</div></fieldset>~~~
 }
 
 
 
 \newcommand{\plain}[1]{
-~~~
-<fieldset class="code-plain"><legend class="code-plain-legend">plain</legend>
-~~~
+~~~<fieldset class="code code-plain"><legend class="code-legend code-legend-plain">plain</legend>~~~
 ```plaintext
 #1
 ```
-~~~
-<div class="code-lag">plain</div></fieldset>
-~~~
+~~~<div class="code-lag">plain</div></fieldset>~~~
 }
 
 
 
 \newcommand{\python}[1]{
-~~~
-<fieldset class="code-python"><legend class="code-python-legend">python</legend>
-~~~
+~~~<fieldset class="code code-python"><legend class="code-legend code-legend-python">python</legend>~~~
 ```python
 #1
 ```
-~~~
-<div class="code-lag">python</div></fieldset>
-~~~
+~~~<div class="code-lag">python</div></fieldset>~~~
 }
 
 
-
 \newcommand{\json}[1]{
-~~~
-<fieldset class="code-json"><legend class="code-json-legend">json</legend>
-~~~
+~~~<fieldset class="code code-json"><legend class="code-legend code-legend-json">json</legend>~~~
 ```json
 #1
 ```
-~~~
-<div class="code-lag">json</div></fieldset>
-~~~
+~~~<div class="code-lag">json</div></fieldset>~~~
 }
 
 
 \newcommand{\html}[1]{
-~~~
-<fieldset class="code-html"><legend class="code-html-legend">html</legend>
-~~~
+~~~<fieldset class="code code-html"><legend class="code-legend code-legend-html">html</legend>~~~
 ```html
 #1
 ```
-~~~
-<div class="code-lag">html</div></fieldset>
-~~~
+~~~<div class="code-lag">html</div></fieldset>~~~
 }
 
 
 \newcommand{\javascript}[1]{
-~~~
-<fieldset class="code-javascript"><legend class="code-javascript-legend">javascript</legend>
-~~~
+~~~<fieldset class="code code-javascript"><legend class="code-legend code-legend-javascript">javascript</legend>~~~
 ```js
 #1
 ```
-~~~
-<div class="code-lag">javascript</div></fieldset>
-~~~
+~~~<div class="code-lag">javascript</div></fieldset>~~~
 }
 
 \newcommand{\css}[1]{
-~~~
-<fieldset class="code-css"><legend class="code-css-legend">css</legend>
-~~~
+~~~<fieldset class="code code-css"><legend class="code-legend code-legend-css">css</legend>~~~
 ```css
 #1
 ```
+~~~<div class="code-lag">css</div></fieldset>~~~
+}
+
+<!-- 
+############################################
+####### Reveal.js Related Functions ########
+############################################
+ -->
+
+\newcommand{\rvsechtml}[2]{
 ~~~
-<div class="code-lag">css</div></fieldset>
+<section !#1>
+
+#2
+
+</section>
+~~~
+}
+
+\newcommand{\rvsecmdfranklin}[2]{
+~~~<section !#1>~~~
+#2
+~~~</section>~~~
+}
+
+\newcommand{\rvsecmdtext}[2]{
+~~~
+<section data-markdown !#1> 
+  <script type="text/template">
+#2
+  </script>
+</section>
 ~~~
 }
 
 
-
-
-\newcommand{\showmd}[1]{
+\newcommand{\rvsecmdscript}[2]{
 ~~~
-<div class="trim">
+<section data-markdown !#1>
+    <script type="text/template">
+#2
+    </script>
+</section>
 ~~~
-\fieldset{md-input}{markdown}{
-`````plaintext
-#1
-`````
 }
+
+\newcommand{\rvcode}[2]{
+~~~
+<pre><code data-line-numbers !#1>
+~~~
+#2
+~~~
+</code></pre>
+~~~
+}
+
+\newcommand{\rvdiv}[2]{
+~~~<div !#1>~~~
+!#2
+~~~</div>~~~
+}
+\newcommand{\rvspan}[2]{
+~~~<span !#1>~~~
+!#2
+~~~</span>~~~
+}
+\newcommand{\rvp}[2]{
+~~~<p !#1>~~~
+!#2
+~~~</p>~~~
+}
+\newcommand{\rvli}[2]{
+~~~<li !#1>~~~
+!#2
+~~~</li>~~~
+}
+
+
+\newcommand{\rvfdiv}[2]{
+~~~<div class="fragment" data-fragment-index="!#1" align="left" style="margin:0px">~~~
+  #2
+~~~</div>~~~
+}
+\newcommand{\rvfspan}[2]{
+~~~<span class="fragment" data-fragment-index="!#1" align="left" style="margin:0px">~~~
+!#2
+~~~</span>~~~
+}
+\newcommand{\rvfp}[2]{
+~~~<p class="fragment" data-fragment-index="!#1" align="left" style="margin:0px">~~~
+  #2
+~~~</p>~~~
+}
+\newcommand{\rvfli}[2]{
+~~~<li class="fragment" data-fragment-index="!#1" align="left" style="margin:0px">~~~
+  #2
+~~~</li>~~~
+}
+
+
+\newcommand{\rvlovv}[6]{
+\rvsecmdfranklin{ }{
+~~~
+<div style="text-align:left">
+~~~
+#3
 ~~~
 </div>
+<table width="100%" height="650px" border="0">
+<tr>
+  <td width="!#1" height=90% style="padding:0px">
 ~~~
-
+#4
 ~~~
-<div class="trim">
+  </td>
+  <td width="!#2" height=90% style="padding:0px;padding-left:0.2em">
 ~~~
-\fieldset{md-result}{result}{
-~~~~~~
-#1
-~~~~~~
+#5
+~~~
+  </td>
+</tr>
+<tr>
+  <td colspan="1" height=5% style="padding:0px">
+    <div style="font-size:18px;padding-bottom:-1em">
+~~~
+#6
+~~~
+    </div>
+  </td>
+</tr>
+</table>
+~~~
 }
+}
+ 
+
+\newcommand{\rvlovvv}[8]{
+\rvsecmdfranklin{ }{
+~~~
+<div style="text-align:left">
+~~~
+#4
 ~~~
 </div>
+<table width="1400[x" height="650px" border="0">
+<tr>
+  <td width="!#1" height=90% style="padding:0px">
+~~~
+#5
+~~~
+  </td>
+  <td width="!#2" height=90% style="padding:0px;padding-left:0.1em">
+~~~
+#6
+~~~
+  </td>
+  <td width="!#3" height=90% style="padding:0px;padding-left:0.1em">
+~~~
+#7
+~~~
+  </td>
+</tr>
+<tr>
+  <td colspan="1" height=5% style="padding:0px">
+    <div style="font-size:18px;padding-bottom:-1em">
+~~~
+#8
+~~~
+    </div>
+  </td>
+</tr>
+</table>
 ~~~
 }
+}
 
-\newcommand{\kbd}[1]{ ~~~<kbd>#1</kbd>~~~ }
-
-\newcommand{\cmdiff}[1]{\fieldset{cm-diff}{&ne; CommonMark}{#1}}
-\newcommand{\note}[1]{  \fieldset{note   }{Note}{#1}}
-\newcommand{\info}[1]{  \fieldset{info   }{Info}{#1}}
-\newcommand{\tip}[1]{   \fieldset{tip    }{Tip}{#1}}
-\newcommand{\warn}[1]{  \fieldset{warn   }{Warn}{#1}}
-\newcommand{\error}[1]{ \fieldset{error  }{Error}{#1}}
-\newcommand{\todo}[1]{  \fieldset{todo   }{Todo}{#1}}
-\newcommand{\hack}[1]{  \fieldset{hack   }{Hack}{#1}}
-
-
-
-\newcommand{\bnote}[2]{ \fieldset{note }{📘#1}{#2}}
-\newcommand{\binfo}[2]{ \fieldset{info }{🥑#1}{#2}}
-\newcommand{\btip}[2]{  \fieldset{tip  }{🍏#1}{#2}}
-\newcommand{\bwarn}[2]{ \fieldset{warn }{🍇#1}{#2}}
-\newcommand{\berror}[2]{\fieldset{error}{🐞#1}{#2}}
-\newcommand{\btodo}[2]{ \fieldset{todo }{🍊#1}{#2}}
-\newcommand{\bhack}[2]{ \fieldset{hack }{💻#1}{#2}}t
-
-<!-- Colorful NoteBoxes: note, info, warn, error, tip, todo, hack
--->
-\newcommand{\tnote}[2]{ @@box-note  @@title 📘 #1@@ @@content #2 @@ @@}
-\newcommand{\tinfo}[2]{ @@box-info  @@title 🥑 #1@@ @@content #2 @@ @@}
-\newcommand{\ttip}[2]{  @@box-tip   @@title 🍏 #1@@ @@content #2 @@ @@}
-\newcommand{\twarn}[2]{ @@box-warn  @@title 🍇 #1@@ @@content #2 @@ @@}
-\newcommand{\terror}[2]{@@box-error @@title 🐞 #1@@ @@content #2 @@ @@}
-\newcommand{\ttodo}[2]{ @@box-todo  @@title 🍊 #1@@ @@content #2 @@ @@}
-\newcommand{\thack}[2]{ @@box-hack  @@title 💻 #1@@ @@content #2 @@ @@}
-
-<!-- Colorful alert noteboxes -->
-\newcommand{\anote}[1]{ @@alert-note  @@content #1 @@ @@}
-\newcommand{\ainfo}[1]{ @@alert-info  @@content #1 @@ @@}
-\newcommand{\atip}[1]{  @@alert-tip   @@content #1 @@ @@}
-\newcommand{\awarn}[1]{ @@alert-warn  @@content #1 @@ @@}
-\newcommand{\aerror}[1]{@@alert-error @@content #1 @@ @@}
-\newcommand{\atodo}[1]{ @@alert-todo  @@content #1 @@ @@}
-\newcommand{\ahack}[1]{ @@alert-hack  @@content #1 @@ @@}
-
-<!-- Colorful inline text -->
-\newcommand{\snote}[1]{ \span{color:#4063D8;background:#d4e0ff}{!#1}}
-\newcommand{\sinfo}[1]{ \span{color:#389826;background:#d4edda}{!#1}}
-\newcommand{\stip}[1]{  \span{color:#87BC62;background:#EAF8E7}{!#1}}
-\newcommand{\swarn}[1]{ \span{color:#9558B2;background:#e4d0ed}{!#1}}
-\newcommand{\serror}[1]{\span{color:#CB3C33;background:#f8d7da}{!#1}}
-\newcommand{\stodo}[1]{ \span{color:#FF7F00;background:#FBF3E7}{!#1}}
-\newcommand{\shack}[1]{ \span{color:#4D4D4D;background:#d6d8d9}{!#1}}
-
-<!-- Colorful inline text: invert bg and fg -->
-\newcommand{\Snote}[1]{ \span{color:#FFFFFF;background:#4063D8}{!#1}}
-\newcommand{\Sinfo}[1]{ \span{color:#FFFFFF;background:#389826}{!#1}}
-\newcommand{\Stip}[1]{  \span{color:#FFFFFF;background:#87BC62}{!#1}}
-\newcommand{\Swarn}[1]{ \span{color:#FFFFFF;background:#9558B2}{!#1}}
-\newcommand{\Serror}[1]{\span{color:#FFFFFF;background:#CB3C33}{!#1}}
-\newcommand{\Stodo}[1]{ \span{color:#FFFFFF;background:#FF7F00}{!#1}}
-\newcommand{\Shack}[1]{ \span{color:#FFFFFF;background:#4D4D4D}{!#1}}
-
-<!-- Colorful inline text: no bg -->
-\newcommand{\cnote}[1]{ \span{color:#4063D8}{!#1}}
-\newcommand{\cinfo}[1]{ \span{color:#389826}{!#1}}
-\newcommand{\ctip}[1]{  \span{color:#87BC62}{!#1}}
-\newcommand{\cwarn}[1]{ \span{color:#9558B2}{!#1}}
-\newcommand{\cerror}[1]{\span{color:#CB3C33}{!#1}}
-\newcommand{\ctodo}[1]{ \span{color:#FF7F00}{!#1}}
-\newcommand{\chack}[1]{ \span{color:#4D4D4D}{!#1}}
