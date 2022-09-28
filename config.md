@@ -242,9 +242,9 @@ Useful HTML snippets
 
 \newcommand{\plain}[1]{
 ~~~<fieldset class="code code-plain"><legend class="code-legend code-legend-plain">plain</legend>~~~
-```plaintext
+`````plaintext
 #1
-```
+`````
 ~~~<div class="code-lag">plain</div></fieldset>~~~
 }
 
@@ -398,21 +398,21 @@ Useful HTML snippets
 #3
 ~~~
 </div>
-<table width="100%" height="650px" border="0">
+<table id="lov" width="100%" height="650px" border="0">
 <tr>
-  <td width="!#1" height=90% style="padding:0px">
+  <td id="lov" width="!#1" height=90%>
 ~~~
 #4
 ~~~
   </td>
-  <td width="!#2" height=90% style="padding:0px;padding-left:0.2em">
+  <td id="lov" width="!#2" height=90%>
 ~~~
 #5
 ~~~
   </td>
 </tr>
 <tr>
-  <td colspan="1" height=5% style="padding:0px">
+  <td id="lov" colspan="1" height=5% >
     <div style="font-size:18px;padding-bottom:-1em">
 ~~~
 #6
@@ -434,26 +434,26 @@ Useful HTML snippets
 #4
 ~~~
 </div>
-<table width="1400[x" height="650px" border="0">
+<table id="lov" width="1400px" height="650px" border="0">
 <tr>
-  <td width="!#1" height=90% style="padding:0px">
+  <td id="lov" width="!#1" height=90%>
 ~~~
 #5
 ~~~
   </td>
-  <td width="!#2" height=90% style="padding:0px;padding-left:0.1em">
+  <td id="lov" width="!#2" height=90%>
 ~~~
 #6
 ~~~
   </td>
-  <td width="!#3" height=90% style="padding:0px;padding-left:0.1em">
+  <td id="lov" width="!#3" height=90%>
 ~~~
 #7
 ~~~
   </td>
 </tr>
 <tr>
-  <td colspan="1" height=5% style="padding:0px">
+  <td id="lov" colspan="1" height=5%>
     <div style="font-size:18px;padding-bottom:-1em">
 ~~~
 #8
@@ -464,5 +464,48 @@ Useful HTML snippets
 </table>
 ~~~
 }
+}
+
+\newcommand{\lovvv}[6]{
+  ~~~
+  <table id="lov">
+  <tr>
+    <td id="lov" height=90% style="width:!#1">
+  ~~~
+  #4
+  ~~~
+    </td>
+    <td id="lov" width="!#2" height=90% align="center">
+  ~~~
+  #5
+  ~~~
+    </td>
+    <td id="lov" width="!#3" height=90% align="center">
+  ~~~
+  #6
+  ~~~
+    </td>
+  </tr>
+  </table>
+  ~~~
+}
+
+\newcommand{\lovv}[4]{
+  ~~~
+  <table id="lov">
+  <tr>
+    <td id="lov" height=90% style="width:!#1">
+  ~~~
+  #3
+  ~~~
+    </td>
+    <td id="lov" width="!#2" height=90% align="center">
+  ~~~
+  #4
+  ~~~
+    </td>
+  </tr>
+  </table>
+  ~~~
 }
 

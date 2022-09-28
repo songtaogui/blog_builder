@@ -13,6 +13,16 @@ hascomment = false
 @@col-12,col-lg-8
 
 \simplecard{
+    title="Julia code style: Blue",
+    link="/notebooks/JuliaBlueStyleZh",
+    descr="""
+          The chinese version of Julia code style: Blue.
+          The original version could be found [here](https://github.com/invenia/BlueStyle)
+          """,
+    theme="rand"
+}
+
+\simplecard{
     title="My bioinformatics thoughts",
     link="/notebooks/bioinfomatics",
     descr="""
@@ -20,8 +30,6 @@ hascomment = false
           """,
     theme="note"
 }
-
-
 
 \simplecard{
   title="Statistical rethinking in Julia",

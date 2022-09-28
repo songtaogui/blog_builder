@@ -90,9 +90,6 @@ hascomment = true
   link="https://shixiangwang.github.io/weekly/"
 }
 
-
-
-
 @@
 
 \end{section}
@@ -140,6 +137,12 @@ hascomment = true
   title="Frames Catherine White",
   descr="ML scientist, developer of lots of great Julia PKGs, writes blogs about julia",
   link="https://www.oxinabox.net/"
+}
+
+\simplecard{
+  title="JOHN MYLES WHITE",
+  descr="Engineer manager at Facebook, used to maintain foundational Julia data analysis packages, the author of <Machine Learning for Hackers>.",
+  link="https://www.johnmyleswhite.com/"
 }
 
 @@

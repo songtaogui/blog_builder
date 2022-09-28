@@ -120,18 +120,11 @@ mutable struct Record
     alndata::Vector{UnitRange{Int}}
     alnend ::UnitRange{Int}
 end
-
-
 }
-
-
 
 \todo{
     TO BE CONTINUE...
 }
-
-
- 
 
 # :x CrossMapUtilL331L334
 

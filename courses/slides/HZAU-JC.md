@@ -484,7 +484,6 @@ So, why \ctip{(still stick to)} academic?
 }
 ~~~
 </section>
-
 ~~~
 
 

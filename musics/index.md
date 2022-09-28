@@ -13,11 +13,12 @@ hidetitle = true
 ---
 > Find the playlist [HERE](https://music.163.com/playlist?id=7627064833&userid=134399768)
 ---
+
 ~~~
 <div class="Aplayer">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+    <link rel="stylesheet" href="/libs/APlayer/APlayer.min.css">
+    <script src="/libs/APlayer/APlayer.min.js"></script>
+    <script src="/libs/APlayer/Meting.min.js"></script>
     <meting-js id="7627064833" 
                server="netease"
                type="playlist"

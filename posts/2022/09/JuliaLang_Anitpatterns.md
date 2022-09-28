@@ -24,7 +24,7 @@ hascomment = true
 
 \hhack{什么是"反模式"}{"反模式"是随着"设计模式"的概念而出现的词, 指\cwarn{在实践中明显出现, 但低效或有待优化的设计模式, 是用来解决问题的带有共性的不良方法}(参考[WIKI](https://zh.m.wikipedia.org/zh-hans/%E5%8F%8D%E9%9D%A2%E6%A8%A1%E5%BC%8F)定义)。}
 
-这篇博文中, 作者主要列举了Julia中四大反模式:
+这篇博文中, 作者主要列举了Julia中四大反模式:[^1]
 
 \toc
 
